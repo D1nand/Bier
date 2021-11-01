@@ -15,6 +15,7 @@ table, th, td {
   td{
       text-align: center;
   }
+
     .k{
         text-decoration: none;
         color: black;
@@ -42,3 +43,63 @@ table, th, td {
 .knop{
     margin-bottom: 3%;
 }
+
+  .nav{
+    overflow: hidden;
+    height: 100%;
+    float: left;
+  }
+  .nav a{
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  .nav a:hover{
+    background-color: #bbb;
+    color: #000;
+  }
+  .sidenavi{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #100;
+    opacity: 1;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.4s;
+  }
+  .sidenavi a{
+    padding: 10px 10px 10px 30px;
+    text-decoration: none;
+    font-size: 24px;
+    color: white;
+    display: block;
+    transition: 0.2s;
+  }
+  .sidenavi a:hover{
+    color: rgb(206, 206, 206);
+  }
+  .sidenavi .knop-sluit{
+    position: absolute;
+    top: 0;
+    right: 22px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  #mainn{
+    transition: margin-left 0.5s;
+    padding: 20px;
+    overflow: hidden;
+    width: 100%;
+  }
+  @media(max-width:570px){
+
+  }
+
