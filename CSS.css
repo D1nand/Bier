@@ -12,9 +12,9 @@ table, th, td {
       text-align: center;
   }
   .nav{
-    background-color: rgb(51, 51, 51);
     overflow: hidden;
-    height: 63px;
+    height: 100%;
+    float: left;
   }
   .nav a{
     float: left;
@@ -24,10 +24,6 @@ table, th, td {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 20px;
-  }
-  .nav ul{
-    margin: 8px 0 0 0;
-    list-style: none;
   }
   .nav a:hover{
     background-color: #bbb;
@@ -41,7 +37,7 @@ table, th, td {
     top: 0;
     left: 0;
     background-color: #100;
-    opacity: 0.9;
+    opacity: 1;
     overflow-x: hidden;
     padding-top: 60px;
     transition: 0.4s;
@@ -69,4 +65,7 @@ table, th, td {
     padding: 20px;
     overflow: hidden;
     width: 100%;
+  }
+  @media(max-width:570px){
+
   }
