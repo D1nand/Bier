@@ -1,3 +1,13 @@
 body{
     font-family: Arial;
 }
+table, th, td {
+    border: 1px solid black;
+  }
+  
+  table {
+    width: 60%;
+  }
+  td{
+      text-align: center;
+  }
