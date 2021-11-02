@@ -99,7 +99,20 @@ table, th, td {
     overflow: hidden;
     width: 100%;
   }
+ .loguit{
+   cursor: pointer;
+   background-color: black;
+   color: white;
+   padding: 10px 15px;
+ }
+ .loguit:hover{
+  background-color: #333;
+    color: white;
+    text-decoration: none;
+ }
  
+ 
+
   @media(max-width:570px){
 
   }
