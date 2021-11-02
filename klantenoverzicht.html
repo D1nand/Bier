@@ -1,11 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <link rel="stylesheet" href="CSS.css">
 </head>
 
 <body>
+    <nav class="nav">
+        <span class="spanned">
+             <a href="#" onclick="openSideMenu()">
+                 <svg width="30" height="30">
+                        <path d="M0,5 30,5" stroke="#000" stroke-width="5"/>
+                            <path d="M0,14 30,14" stroke="#000" stroke-width="5"/>
+                              <path d="M0,23 30,23" stroke="#000" stroke-width="5"/>
+                 </svg>
+             </a>
+        </span>
+       
+        
+    </nav>
     
+    <div id="side-menu" class="sidenavi">
+        <a href="#" class="knop-sluit" onclick="closeSideMenu()">&times;</a>
+        <a href="orderoverzicht.html">Orderoverzicht</a>
+        <a href="klantenoverzicht.html">Klantenoverzicht</a>
+    </div>
+    
+    <div id="mainnn">
+
+    
+    <script>
+        function openSideMenu(){
+            document.getElementById('side-menu').style.width = '250px';
+            document.getElementById('mainnn').style.marginLeft = '250px';
+        }
+        function closeSideMenu(){
+            document.getElementById('side-menu').style.width = '0';
+            document.getElementById('mainnn').style.marginLeft = '0';
+        }
+    </script>
+    
+    <center>
+         <h2>Klantenoverzicht</h2>
+
+         <table class="Klantoverzicht">
+             <tr>
+                 <th>Bedrijfsnaam</th>
+                 <th>E-mai</th>
+                 <th>Wachtwoord</th>
+             </tr>
+             <tr>
+                 <td>SC Heerenveen</td>
+                 <td>Scheerenveen@gmail.com</td>
+                 <td>SCINLOG18</td>
+             </tr> 
+         </table>
+        </center>
+      
+        </div>
 </body>
 
 </html>
