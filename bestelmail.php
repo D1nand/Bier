@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
     $headers = "From: ".$mailFrom;
     $txt = "You have recieved an e-mail from ".$name.".\n\n";
 
-    mail($mailTo, $txt, $aantal.'bier');
+    mail($mailTo, $txt, $aantal. 'bier');
     header("Location: bestelpagina.html?mailsend");
 
 }
