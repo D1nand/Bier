@@ -1,19 +1,18 @@
 <?php
 // download fpdf class (http://fpdf.org)
-require("doc16-html-nl.tgz");
+require("fpdf.php");
 
 // fpdf object
 $pdf = new FPDF();
 
 // generate a simple PDF (for more info, see http://fpdf.org/en/tutorial/)
 $pdf->AddPage();
-$pdf->SetFont("Arial","B",14);
-$pdf->Cell(40,10, "this is a pdf example");
+$pdf->SetFont('Arial','B',16);
+$pdf->Cell(60,10,'Powered by FPDF.',0,1,'C');
 
 // email stuff (change data below)
 $to = "t88577457@gmail.com"; 
 $from = $_POST['email'];
-$subject = "send email with pdf attachment"; 
 $message = "<p>Please see the attachment.</p>";
 
 // a random hash will be necessary to send mixed content
@@ -23,7 +22,7 @@ $separator = md5(time());
 $eol = PHP_EOL;
 
 // attachment name
-$filename = "fpdf184.tgz";
+$filename = "factuur.pdf";
 
 // encode data (puts attachment in proper format)
 $pdfdoc = $pdf->Output("", "S");
@@ -37,11 +36,7 @@ $headers .= "Content-Type: multipart/mixed; boundary=\"".$separator."\"".$eol.$e
 $headers .= "Content-Transfer-Encoding: 7bit".$eol;
 $headers .= "This is a MIME encoded message.".$eol.$eol;
 
-// message
-$headers .= "--".$separator.$eol;
-$headers .= "Content-Type: text/html; charset=\"iso-8859-1\"".$eol;
-$headers .= "Content-Transfer-Encoding: 8bit".$eol.$eol;
-$headers .= $message.$eol.$eol;
+
 
 // attachment
 $headers .= "--".$separator.$eol;
@@ -52,6 +47,6 @@ $headers .= $attachment.$eol.$eol;
 $headers .= "--".$separator."--";
 
 // send message
-mail($to, $subject, "", $headers);
-
+mail($to, "", $headers);
+header("Location: bestelpagina.html?mailsend");
 ?>
