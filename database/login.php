@@ -36,7 +36,9 @@ mysqli_close($conn)
     <head>
         <meta charset="utf-8">
         <meta name="vieuwport" content="width=device-width, initial-scale=1.0">
-        
+
+
+
         <link rel="stylesheet"  type= "text/css" href="CSS.css">
 
         <title> Login Scherm</title>
@@ -57,13 +59,6 @@ mysqli_close($conn)
                 <p class="login-register-text">Ben je beheerder? <a href="login.html">Log hier in</a> </p>
             </form>
         </div>
-            
-<<<<<<< HEAD:login.php
-          h
-   </body>
-=======
-          
-   </body>
 
 
->>>>>>> 52fc1598a3f53a2532d5ee8e6295f8051d20c9ee:database/login.html
+   </body>
