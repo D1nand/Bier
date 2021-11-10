@@ -1,3 +1,16 @@
+<?php
+$dbServername = "localhost";
+$dbUsername = "root";
+$dbPassword = "";
+$dbName = "bier";
+
+$conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
+if ($conn->connect_error){
+    die ("connection failed: ")
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +38,7 @@
     <div id="side-menu" class="sidenavi">
         <a href="#" class="knop-sluit" onclick="closeSideMenu()">&times;</a>
         <a href="orderoverzicht.html">Orderoverzicht</a>
-        <a href="klantenoverzicht.html">Klantenoverzicht</a>
+        <a href="klantenoverzicht.php">Klantenoverzicht</a>
     </div>
     
     <div id="mainnn">
@@ -42,22 +55,7 @@
         }
     </script>
     
-    <center>
-         <h2>Klantenoverzicht</h2>
-
-         <table class="Klantoverzicht">
-             <tr>
-                 <th>Bedrijfsnaam</th>
-                 <th>E-mai</th>
-                 <th>Wachtwoord</th>
-             </tr>
-             <tr>
-                 <td>SC Heerenveen</td>
-                 <td>Scheerenveen@gmail.com</td>
-                 <td>SCINLOG18</td>
-             </tr> 
-         </table>
-        </center>
+  
       
         </div>
 </body>
