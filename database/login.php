@@ -1,15 +1,17 @@
 <?php
-$servername = "localhost";
-$mail = "proteine@gmail.com";
-$username = "Kevin";
-$password = "";
-$dbname = "biermanagement";
+       $servername = "localhost";
+       $username = "root";
+       $password = "";
+       $dbname = "biermanagement";
 
-//create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-//check connection
-if (!$conn) {
-    die("connection failed: " . mysqli_connect_error());
+       // Create connection
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+
+
 
 }
 $sql = "SELECT id, firstname, lastname FROM Myguest";
@@ -43,7 +45,7 @@ mysqli_close($conn)
 
         <title> Login Scherm</title>
    </head>
-   <body>
+   <bodyy>
        <div class="container">
            <form class="login-email">
                <p class="login-text" style="font-size: 2rem; font-weight: 800;">Login</p>
@@ -61,4 +63,5 @@ mysqli_close($conn)
         </div>
 
 
-   </body>
+   </bodyy>
+   </html>
