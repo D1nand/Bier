@@ -107,6 +107,11 @@ table, th, td {
     overflow: hidden;
     width: 100%;
   }
+
+  .klanttabel{
+    align-items: center;
+    justify-content: center;
+  }
  .loguit{
    cursor: pointer;
    background-color: black;
@@ -127,6 +132,8 @@ table, th, td {
   font-family: 'Poppins', sans-serif;
 }
 
+
+
 .bodyy {
   width: 100%;
   min-height: 100vh;
@@ -137,6 +144,7 @@ table, th, td {
   justify-content: center;
   align-items: center;
 }
+
 
 .container {
   width: 400px;

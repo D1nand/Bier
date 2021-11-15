@@ -1,16 +1,3 @@
-<?php
-$dbServername = "localhost";
-$dbUsername = "root";
-$dbPassword = "";
-$dbName = "bier";
-
-$conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
-if ($conn->connect_error){
-    die ("connection failed: ")
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,7 +44,32 @@ if ($conn->connect_error){
     
   
       
-        </div>
+        
 </body>
 
+
+<?php
+$dbServername = "localhost";
+$dbUsername = "root";
+$dbPassword = "";
+$dbName = "bier";
+
+$conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
+if ($conn->connect_error){
+    die ("connection failed: " . $conn->connect_error);
+}
+ $sql = "SELECT Bedrijfsnaam, Email, Adres, Postcode, Factuuradres FROM users ORDER BY Bedrijfsnaam";
+ $result = $conn->query($sql);
+
+
+if ($result->num_rows > 0) {
+    echo "<table  id='mainnn' class='klanttabel'><tr><th>Bedrijsnaam</th><th>Email</th><th>Adres</th><th>Postcode</th><th>Factuuradres</tr>";
+    while($row = $result->fetch_assoc()) {
+      echo "<tr><td>".$row["Bedrijfsnaam"]."</td><td>".$row["Email"]."</td><td>".$row["Adres"]."</td><td>".$row["Postcode"]."</td><td>".$row["Factuuradres"]."</td>";
+    }
+    echo "</table>";
+} 
+?>
+
+</div>
 </html>
