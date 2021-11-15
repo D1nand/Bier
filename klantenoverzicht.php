@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <link rel="stylesheet" href="CSS.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css%22%3E">
 </head>
 
 <body>
@@ -40,12 +41,16 @@
             document.getElementById('side-menu').style.width = '0';
             document.getElementById('mainnn').style.marginLeft = '0';
         }
+
+        ul.addEventListener('click', ()=>{
+
+        })
     </script>
     
   
-      
+    <i class="fas fa-user-edit"></i> 
         
-</body>
+
 
 
 <?php
@@ -68,8 +73,9 @@ if ($result->num_rows > 0) {
       echo "<tr><td>".$row["Bedrijfsnaam"]."</td><td>".$row["Email"]."</td><td>".$row["Adres"]."</td><td>".$row["Postcode"]."</td><td>".$row["Factuuradres"]."</td>";
     }
     echo "</table>";
+
 } 
 ?>
-
+</body>
 </div>
 </html>
