@@ -110,6 +110,20 @@ table, th, td {
     overflow: hidden;
     width: 100%;
   }
+.fas{
+  height: 10px;
+  width: auto;
+  color: #000;
+}
+.fa-user-edit{
+  height: 10px;
+  width: auto;
+  color: #000;
+}
+  .klanttabel{
+    align-items: center;
+    justify-content: center;
+  }
  .loguit{
    cursor: pointer;
    background-color: black;
