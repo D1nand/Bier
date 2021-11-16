@@ -7,8 +7,8 @@
         <center>
         <div class="bestelformulierP">
             <div class="knop">
-            <h1 href="#" class="particulier k">PARTICULIER</h1>
-            <h1 href="" class="zakelijk k" >ZAKELIJK</h1>
+            <h1 class="particulier k">PARTICULIER</h1>
+            <a style="text-decoration: none;" href="login.php"> <h1 class="zakelijk k" >ZAKELIJK</h1> </a>
             </div>
             <form class="contact-form" action="bestel.php" method="POST" >
             <div class="formulier">
@@ -17,8 +17,10 @@
             <input type="text" class="input" name="adres" placeholder="Adres(+nummer)" required><br><br>
             <input type="text" class="input" name="postcode" placeholder="Postcode" required><br><br>
             <input type="number" min="1" class="input" name="aantal" placeholder="Aantal bier" required><br><br>
-            <button name="submit" type="submit" class="input button">Bestel</button>
+            <button name="submit" type="submit" class="input button">Bestel</button> <br> <br>
             </div>
+            <p>totale prijs: <script language=”php”> </script> </p>
+            <p>verzendkosten:</p>
         </div>
         </center>
     </form>
