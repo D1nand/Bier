@@ -1,7 +1,10 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
+
 body{
     font-family: Arial;
 }
@@ -48,8 +51,8 @@ table, th, td {
 .input{
   font-size: x-large;
 }
-.knop{
-    margin-bottom: 1%;
+.button{
+  
 }
 
   .nav{
@@ -119,13 +122,6 @@ table, th, td {
     text-decoration: none;
  }
  
- 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
 
 .bodyy {
   width: 100%;
