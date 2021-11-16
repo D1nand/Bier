@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <link rel="stylesheet" href="CSS.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css%22%3E">
 </head>
 
 <body>
+
     <nav class="nav">
         <span class="spanned">
              <a href="#" onclick="openSideMenu()">
@@ -27,10 +27,10 @@
         <a href="#" class="knop-sluit" onclick="closeSideMenu()">&times;</a>
         <a href="orderoverzicht.html">Orderoverzicht</a>
         <a href="klantenoverzicht.php">Klantenoverzicht</a>
+        <a href="login.php">Uitloggen</a>
     </div>
     
     <div id="mainnn">
-
     
     <script>
         function openSideMenu(){
@@ -41,16 +41,13 @@
             document.getElementById('side-menu').style.width = '0';
             document.getElementById('mainnn').style.marginLeft = '0';
         }
-
-        ul.addEventListener('click', ()=>{
-
-        })
     </script>
     
   
-    <i class="fas fa-user-edit"></i> 
-        
-
+    <a href="accounttoevoegen.php" class="toevoegknop">Account Toevoegen</a>
+    </body>
+</div>
+</html>
 
 
 <?php
@@ -76,6 +73,6 @@ if ($result->num_rows > 0) {
 
 } 
 ?>
-</body>
-</div>
-</html>
+
+
+
