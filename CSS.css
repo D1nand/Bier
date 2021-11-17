@@ -183,7 +183,13 @@ box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
     color: white;
     text-decoration: none;
  }
- 
+ .Verwijderen{
+   text-decoration: none;
+   color: grey ;
+ }
+ .Verwijderen:hover{
+   color: #000;
+ }
 
 .lichaam {
   width: 100%;

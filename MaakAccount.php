@@ -19,5 +19,5 @@ $sql = "INSERT INTO users (Bedrijfsnaam, Email, Adres, Postcode, Factuuradres, W
 VALUES ('$Bedrijfsnaam', '$Email', '$Adres', '$Postcode', '$Factuuradres', '$Wachtwoord');";
 mysqli_query($conn, $sql);
 
-header("Location: klantenoverzicht.php?signup=succes");
+header("Location: klantenoverzicht.php?Accounttoegevoegd");
 ?>
