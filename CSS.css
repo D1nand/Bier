@@ -194,6 +194,7 @@ box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 500px;
 }
 
 .container {
