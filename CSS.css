@@ -123,7 +123,7 @@ table, th, td {
   transition: 0.3s;
 }
 .toevoegknop{
-background-color: greenyellow;
+background-color: rgb(60, 255, 60);
 margin-left: 10px;
 margin-top: 70px;
 padding: 30px;
@@ -163,7 +163,7 @@ box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
   background-color: #e7e7e7;
 }
   .klanttabel{
-    margin-left: 350px;
+    margin-left: 300px;
     margin-top: 100px;
     float: left;
     background-color: white;
@@ -190,7 +190,11 @@ box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
  .Verwijderen:hover{
    color: #000;
  }
-
+.klanttekst{
+  margin-left: 700px;
+  margin-top: 20px;
+  font-size: xx-large;
+}
 .lichaam {
   width: 100%;
   min-height: 100vh;

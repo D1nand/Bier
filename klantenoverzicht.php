@@ -25,7 +25,7 @@
     
     <div id="side-menu" class="sidenavi">
         <a href="#" class="knop-sluit" onclick="closeSideMenu()">&times;</a>
-        <a href="orderoverzicht.html">Orderoverzicht</a>
+        <a href="orderoverzicht.php">Orderoverzicht</a>
         <a href="klantenoverzicht.php">Klantenoverzicht</a>
         <a href="loginn.php">Uitloggen</a>
     </div>
@@ -45,6 +45,7 @@
     
   
     <a href="accounttoevoegen.php" class="toevoegknop">Account Toevoegen</a>
+    <h2 class="klanttekst">Klantenoverzicht</h2>
     </body>
 </div>
 </html>
