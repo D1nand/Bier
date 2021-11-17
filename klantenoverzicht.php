@@ -60,19 +60,21 @@ $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
 if ($conn->connect_error){
     die ("connection failed: " . $conn->connect_error);
 }
- $sql = "SELECT Bedrijfsnaam, Email, Adres, Postcode, Factuuradres FROM users ORDER BY Bedrijfsnaam";
+ $sql = "SELECT Id, Bedrijfsnaam, Email, Adres, Postcode, Factuuradres FROM users ORDER BY Id";
  $result = $conn->query($sql);
 
 
 if ($result->num_rows > 0) {
     echo "<table  id='mainnn' class='klanttabel'><tr><th>Bedrijsnaam</th><th>Email</th><th>Adres</th><th>Postcode</th><th>Factuuradres</tr>";
     while($row = $result->fetch_assoc()) {
-      echo "<tr><td>".$row["Bedrijfsnaam"]."</td><td>".$row["Email"]."</td><td>".$row["Adres"]."</td><td>".$row["Postcode"]."</td><td>".$row["Factuuradres"]."</td>";
+      echo "<tr><td>".$row["Bedrijfsnaam"]."</td><td>".$row["Email"]."</td><td>".$row["Adres"]."</td><td>".$row["Postcode"]."</td><td>".$row["Factuuradres"]."</td><td>.<a href='klantenoverzicht.php?deletePost=".$row['Id']."'<span class='fa fa-trash'></span>hoer</a></td>";
     }
-    echo "</table>";
+    echo '</table>';
+}
 
-} 
+if(isset($_GET['deletePost'])) {
+    $stmt = $conn->prepare('DELETE FROM users WHERE Id = ?');
+    $stmt->bind_param('i', $_GET['deletePost']);
+    $stmt->execute();
+}
 ?>
-
-
-
