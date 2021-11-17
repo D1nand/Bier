@@ -40,7 +40,7 @@ if (isset($_POST['submit'])) {
     $txt = "You have recieved an e-mail from ".$name.".\n\n";
 
     mail($mailTo, $txt, $aantal. 'bier');
-    header("Location: bestelpagina.html?mailsend");
+    header("Location: bibliotheek/factuur.php");
 
 }
 ?>
