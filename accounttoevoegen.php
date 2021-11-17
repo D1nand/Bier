@@ -8,9 +8,9 @@
 </head>
 
 <body>
-    
-<a class="terugklantoverzicht" href="klantenoverzicht.php">Terug</a>
+<a class="terugklantoverzicht" href="klantenoverzicht.php">Terug</a>    
 <form action="MaakAccount.php" method="POST" class="accountformulier">
+    
         <input class="f" type="text" name="Bedrijfsnaam" placeholder="Bedrijfsnaam" required>
         <br>
         <input class="f" type="email" name="Email" placeholder="E-mail" required>
