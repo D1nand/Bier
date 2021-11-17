@@ -23,9 +23,9 @@
     
     <div id="side-menu" class="sidenavi">
         <a href="#" class="knop-sluit" onclick="closeSideMenu()">&times;</a>
-        <a href="orderoverzicht.html">Orderoverzicht</a>
+        <a href="orderoverzicht.php">Orderoverzicht</a>
         <a href="klantenoverzicht.php">Klantenoverzicht</a>
-        <a href="login.php">Uitloggen</a>
+        <a href="loginn.php">Uitloggen</a>
     </div>
     
     <div id="mainn">
@@ -44,25 +44,6 @@
        
      <center>
         <h1 style="padding-bottom: 4%;">Orderoverzicht</h1>
-    
-           <table>
-            <tr>
-              <th>Naam/Bedrijfsnaam</th>
-              <th>Order</th>
-              <th>Aantal</th>
-              <th>Datum</th>
-              <th>Status</th>
-            </tr>
-            <tr>
-              <td>SC Heerenveen</td>
-              <td>#1</td>
-              <td>112</td>
-              <td>01/11/2021</td>
-              <td>OPEN</td>
-            </tr>
-          
-            </table>
-     </center>
- 
+      </center>
     </body>
 </html>

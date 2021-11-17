@@ -25,9 +25,9 @@
     
     <div id="side-menu" class="sidenavi">
         <a href="#" class="knop-sluit" onclick="closeSideMenu()">&times;</a>
-        <a href="orderoverzicht.html">Orderoverzicht</a>
+        <a href="orderoverzicht.php">Orderoverzicht</a>
         <a href="klantenoverzicht.php">Klantenoverzicht</a>
-        <a href="login.php">Uitloggen</a>
+        <a href="loginn.php">Uitloggen</a>
     </div>
     
     <div id="mainnn">
@@ -45,6 +45,7 @@
     
   
     <a href="accounttoevoegen.php" class="toevoegknop">Account Toevoegen</a>
+    <h2 class="klanttekst">Klantenoverzicht</h2>
     </body>
 </div>
 </html>
@@ -60,19 +61,21 @@ $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
 if ($conn->connect_error){
     die ("connection failed: " . $conn->connect_error);
 }
- $sql = "SELECT Bedrijfsnaam, Email, Adres, Postcode, Factuuradres FROM users ORDER BY Bedrijfsnaam";
+ $sql = "SELECT Id, Bedrijfsnaam, Email, Adres, Postcode, Factuuradres FROM users ORDER BY Id";
  $result = $conn->query($sql);
 
 
 if ($result->num_rows > 0) {
     echo "<table  id='mainnn' class='klanttabel'><tr><th>Bedrijsnaam</th><th>Email</th><th>Adres</th><th>Postcode</th><th>Factuuradres</tr>";
     while($row = $result->fetch_assoc()) {
-      echo "<tr><td>".$row["Bedrijfsnaam"]."</td><td>".$row["Email"]."</td><td>".$row["Adres"]."</td><td>".$row["Postcode"]."</td><td>".$row["Factuuradres"]."</td>";
+      echo "<tr><td>".$row["Bedrijfsnaam"]."</td><td>".$row["Email"]."</td><td>".$row["Adres"]."</td><td>".$row["Postcode"]."</td><td>".$row["Factuuradres"]."</td><td>.<a href='klantenoverzicht.php?deletePost=".$row['Id']."'<span class='Verwijderen'></span>Verwijderen</a></td>";
     }
-    echo "</table>";
+    echo '</table>';
+}
 
-} 
+if(isset($_GET['deletePost'])) {
+    $stmt = $conn->prepare('DELETE FROM users WHERE Id = ?');
+    $stmt->bind_param('i', $_GET['deletePost']);
+    $stmt->execute();
+}
 ?>
-
-
-
