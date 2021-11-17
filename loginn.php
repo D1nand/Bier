@@ -52,11 +52,11 @@
 
 
     if (isset($_POST)) {
-        $un=$_POST['Email'];
-        $pw=$_POST['Wachtwoord'];
+        $un=$_POST['email'];
+        $pw=$_POST['wachtwoord'];
 
  
-        $sql = "SELECT Email  FROM users WHERE Email = '".$un."' AND Wachtwoord = '".$pw."'";
+        $sql = "SELECT email  FROM users WHERE Email = '".$un."' AND wachtwoord = '".$pw."'";
         $result = $conn->query($sql);
  
         if ($result->num_rows > 0) {
