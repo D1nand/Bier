@@ -1,4 +1,45 @@
 <?php
+
+
+if (isset($_POST['submit'])) {
+
+    $mysqli = new mysqli("localhost","root","","bier");
+    mysql_set_charset("utf8");
+    if ( $mysqli->connect_error ) {
+        die( 'Connect Error: ' . $mysqli->connect_errno . ': ' . $mysqli->connect_error );
+    }
+    
+    $naam = $_POST['naam'];
+    $email= $_POST['email'];
+    $adres = $_POST['adres'];
+    $postcode = $_POST['postcode'];
+    $aantal = $_POST['aantal'];
+    $datum =    date("Y-m-s");
+    
+    
+    $sql = "INSERT INTO `betaling`(`Naam`, `E-mail`, `Adres`, `Postcode`, `Aantal`, `Datum`) VALUES ('$naam', '$email', '$adres', '$postcode', $aantal, '$datum')";
+    
+    echo $sql;
+    $insert = $mysqli->query($sql);
+    
+    
+    if ( $insert ) {
+        echo "Succes! Row ID: {$mysqli->insert_id}";
+    } else {
+        die("Error: {$mysqli->errno} : {$mysqli->error}");
+    }
+    
+    $mysqli->close();
+     }
+
+
+
+
+
+
+
+
+
 if (isset($_POST['submit'])) {
 //call the FPDF library
 require('fpdf.php');
@@ -109,7 +150,7 @@ Geachte $naam, in de bijlage vind u de factuur voor de door u geplaatste bestell
 
 
 
-Betaal: http://localhost/Bierverkoopmanagement/bestelpagina.html
+Betaal: http://localhost/Bierverkoopmanagement/bestelpagina/bibliotheek/Betaal.php 
 
 --$BOUNDARY
 Content-Type: application/pdf
@@ -121,11 +162,8 @@ $attachment.$eol.$eol
 END;
 
 mail( $to, $subject, $body, $headers );
-header("location: /Bierverkoopmanagement/bestelpagina.html");
+header("location: /Bierverkoopmanagement/bestelpagina/Bestelpagina.html");
 }
 
 
-    
-    
-    
-  
+ ?>
