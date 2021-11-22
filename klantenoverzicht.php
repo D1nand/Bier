@@ -68,7 +68,7 @@ if ($conn->connect_error){
 if ($result->num_rows > 0) {
     echo "<table  id='mainnn' class='klanttabel'><tr><th>Bedrijsnaam</th><th>Email</th><th>Adres</th><th>Postcode</th><th>Factuuradres</th><th>Verwijderen</tr>";
     while($row = $result->fetch_assoc()) {
-      echo "<tr><td>".$row["Bedrijfsnaam"]."</td><td>".$row["Email"]."</td><td>".$row["Adres"]."</td><td>".$row["Postcode"]."</td><td>".$row["Factuuradres"]."</td><td>.<a href='klantenoverzicht.php?deletePost=".$row['Id']."'<span class='Verwijderen'></span>Verwijderen</a></td>";
+      echo "<tr><td>".$row["Bedrijfsnaam"]."</td><td>".$row["Email"]."</td><td>".$row["Adres"]."</td><td>".$row["Postcode"]."</td><td>".$row["Factuuradres"]."</td><td><a href='klantenoverzicht.php?deletePost=".$row['Id']."'<span class='Verwijderen'></span>Verwijderen</a></td>";
     }
     echo '</table>';
 }
