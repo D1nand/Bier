@@ -57,6 +57,13 @@ $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
 if ($conn->connect_error){
     die ("connection failed: " . $conn->connect_error);
 }
- $sql = "SELECT Id,  FROM orders ORDER BY Id";
+ $sql = "SELECT Id, Naam, Adres FROM orders ORDER BY Id";
  $result = $conn->query($sql);
+
+ if ($result->num_rows > 0) {
+     echo "<table class='Orders'><tr><th>Id</th><th>Naam</th><th>Adres</th></tr>";
+     while($row = $result->fetch_assoc()){
+        echo "<tr><td>".$row["Id"]."</td><td>".$row["Naam"]."</td><td>".$row["Adres"]."</td>";
+ }
+}
 ?>
