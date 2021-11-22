@@ -4,10 +4,12 @@
 if (isset($_POST['submit'])) {
 
     $mysqli = new mysqli("localhost","root","","bier");
-    mysql_set_charset("utf8");
+
     if ( $mysqli->connect_error ) {
         die( 'Connect Error: ' . $mysqli->connect_errno . ': ' . $mysqli->connect_error );
     }
+
+    
     
     $naam = $_POST['naam'];
     $email= $_POST['email'];
@@ -15,6 +17,7 @@ if (isset($_POST['submit'])) {
     $postcode = $_POST['postcode'];
     $aantal = $_POST['aantal'];
     $datum =    date("Y-m-s");
+    $id=
     
     
     $sql = "INSERT INTO `betaling`(`Naam`, `E-mail`, `Adres`, `Postcode`, `Aantal`, `Datum`) VALUES ('$naam', '$email', '$adres', '$postcode', $aantal, '$datum')";
