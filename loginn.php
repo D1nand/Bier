@@ -61,7 +61,7 @@
  
         if ($result->num_rows > 0) {
         // succes   if ($pw==$row["password"]) {
-            
+            <a href="loginn,php" >zakelijk</a>
 
         }
         else{ 
