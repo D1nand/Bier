@@ -47,3 +47,16 @@
       </center>
     </body>
 </html>
+<?php
+$dbServername = "localhost";
+$dbUsername = "root";
+$dbPassword = "";
+$dbName = "bier";
+
+$conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
+if ($conn->connect_error){
+    die ("connection failed: " . $conn->connect_error);
+}
+ $sql = "SELECT Id,  FROM orders ORDER BY Id";
+ $result = $conn->query($sql);
+?>

@@ -19,7 +19,7 @@
         <form class="login-email">
                 <p class="login-text" style="font-size: 2rem; font-weight: 800;">Login</p>
                 <div class="input-group">
-                    <input name="email" type="E-mail"  placeholder="E-mail" required>
+                    <input name="naam" type="naam"  placeholder="naam" required>
                 </div>
                 <div class="input-group">
                     <input name="email" type="E-mail"  placeholder="E-mail" required>
