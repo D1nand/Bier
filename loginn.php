@@ -60,10 +60,11 @@
         $result = $conn->query($sql);
  
         if ($result->num_rows > 0) {
-        // succes   if ($pw==$row["password"]) {
-            <a href="loginn,php" >zakelijk</a>
 
+        // succes   if ($pw==$row["password"]) {
+            header ("location:voorbeeld.html");
         }
+
         else{ 
         // failed
 
