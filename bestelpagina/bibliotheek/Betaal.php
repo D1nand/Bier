@@ -6,8 +6,7 @@ $mysqli = new mysqli("localhost","root","","bier");
 if ( $mysqli->connect_error ) {
     die( 'Connect Error: ' . $mysqli->connect_errno . ': ' . $mysqli->connect_error );
 }
-
-   
+    
     $id= $_GET['id'];
     
 
@@ -15,21 +14,90 @@ if ( $mysqli->connect_error ) {
 
     $result = $mysqli->query($sql);
 
-    echo "<table  id='mainnn' class='order'><tr><th>Naam</th><th>E-mail</th><th>Adres</th><th>Postcode</th><th>Aantal</th><th>Datum</th><th>ID</tr>";
-        while($row = $result->fetch_assoc()) {
-          echo "<tr><td>".$row["Naam"]."</td><td>".$row["E-mail"]."</td><td>".$row["Adres"]."</td><td>".$row["Postcode"]."</td><td>".$row["Aantal"]."</td><td>".$row["Datum"]."</td><td>".$row["ID"]."</td>";
-        }
-         echo '</table> <br> <br>';
+    while($row = $result->fetch_assoc()) {
 
-         echo "<button name='submit' type='submit' button'>Betaal</button>";
+    $naam = $row['Naam'];
+    $email= $row['E-mail'];
+    $adres = $row['Adres'];
+    $postcode = $row['Postcode'];
+    $aantal = $row['Aantal'];
+    $datum =    $row['Datum'];
+    $id_2 = $row["ID"];
 
-         if (isset($_POST['submit'])) {
+    echo '<br><br><br><center><p> Bestelling betaald </p></center><br><br>';
+    echo '<center><p> terug naar <a href="/Bierverkoopmanagement/bestelpagina/Bestelpagina.html">bestelpagina</a> </p></center>';
+
+    }
+    
          
 
     if ($result->num_rows > 0) {
+
+        
+        $sql2 = "INSERT INTO `orders`(`Naam`, `E-mail`, `Adres`, `Postcode`, `Aantal`, `Datum`, `ID` ) VALUES ('$naam', '$email', '$adres', '$postcode', '$aantal', '$datum', '$id_2')";
+        
+        $insert = $mysqli->query($sql2);
+
+        if ( $insert ) {
+
+           $sql3 = "DELETE FROM `betaling` WHERE ID=$id";
+           $delete = $mysqli->query($sql3);
+
+
+            
+            $Dag = date("d");
+            $Maand = date("m");
+            $jaar = date("Y");
+            $dag2 = $Dag-1;
+            $datum2 = $jaar.'-'.$Maand.'-'.$dag2;
+
+            $sql4 = "DELETE FROM `betaling` WHERE Datum=$datum2";
+            $mysqli->query($sql4);
+
+
+           if ( $delete ) {
+
+            $to = "t88577457@gmail.com";
+            $subject = "Bierbrouwerij DE BOER";
+
+            $BOUNDARY="anystring";
+
+            $headers =<<<END
+            From: <$email>
+            Content-Type: multipart/mixed; boundary=$BOUNDARY
+            END;
+
+            $body =<<<END
+            --$BOUNDARY
+            Content-Type: text/plain
+            
+            Er is een bestelling geplaatst door $naam
+            http://localhost/Bierverkoopmanagement/orderoverzicht.php#
+
+            END;
+
+
+            mail( $to, $subject, $body, $headers );
+
+
+
+            echo '<script language="javascript">';
+            echo 'alert("Succesvol betaald!")';
+            echo '</script>';
+
+    
+
+
+        } else {
+            die("Error: {$mysqli->errno} : {$mysqli->error}");
+        }
+
+        } else {
+            die("Error: {$mysqli->errno} : {$mysqli->error}");
+        }
         
     }
-}
+
      else {
         die("Error: {$mysqli->errno} : {$mysqli->error}");
     }
