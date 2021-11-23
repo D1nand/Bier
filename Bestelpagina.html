@@ -2,13 +2,26 @@
 <html>
     <Head>
         <link rel="stylesheet" href="CSS.css">
+
+
+
+        <script>
+            function mult(value){
+                var x, y ;
+                x= 2.50 * value ;
+                y= 3 * value ;
+
+                document.getElementById('out2x').value = x;
+            }
+        </script>
+
     </Head>
     <body>
         <center>
         <div class="bestelformulierP">
             <div class="knop">
             <h1 class="particulier k">PARTICULIER</h1>
-            <a style="text-decoration: none;" href="/Bierverkoopmanagement/loginn.php"> <h1 class="zakelijk k" >ZAKELIJK</h1> </a>
+            <a style="text-decoration: none;" href="loginn.php"> <h1 class="zakelijk k" >ZAKELIJK</h1> </a>
             </div>
             <form class="contact-form" action="bibliotheek/mail.php" method="POST" >
             <div class="formulier">
@@ -16,12 +29,22 @@
             <input type="email" class="input" name="email" placeholder="E-mail" required><br><br>
             <input type="text" class="input" name="adres" placeholder="Adres(+nummer)" required><br><br>
             <input type="text" class="input" name="postcode" placeholder="Postcode" required><br><br>
-            <input type="number" min="1" max="24" class="input aantal" name="aantal" placeholder="Aantal bier" required><br><br>
-            <button name="submit" type="submit" class="input button">Bestel</button> <br> <br>
+
+            <input type="number" min="1" max="24" class="input aantal" onkeyup="mult(this.value)" name="aantal" placeholder="Aantal" required> 
+            <button name="submit" type="submit" class="input button">Bestel</button> <br> <br> <br> 
             </div>
+
             <p>totale prijs: <script language=”php”> </script> </p>
             <p>verzendkosten:</p>
             <p>kjelnkjfsnfkjs</p>
+
+       
+            <p class="geld">totale prijs: <input type="text" id="out2x" name="" readonly> </p> <br>
+           
+
+       
+          
+
         </div>
         </center>
     </form>
