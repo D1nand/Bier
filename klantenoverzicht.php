@@ -55,9 +55,9 @@
 
 <?php
 $dbServername = "localhost";
-$dbUsername = "root";
-$dbPassword = "";
-$dbName = "bier";
+$dbUsername = "deb85590_p21t2";
+$dbPassword = "pv9EptlJ";
+$dbName = "deb85590_p21t2";
 
 $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
 if ($conn->connect_error){
