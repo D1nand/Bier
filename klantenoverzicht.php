@@ -32,7 +32,7 @@
         <a href="loginn.php">Uitloggen</a>
     </div>
     
-    <div id="mainnn">
+    <div id="mainn">
     
     <script>
         function openSideMenu(){
@@ -68,10 +68,10 @@ if ($conn->connect_error){
 
 
 if ($result->num_rows > 0) {
-    echo "<table  id='mainnn' class='klanttabel'><tr><th>Bedrijsnaam</th><th>Email</th><th>Adres</th><th>Postcode</th><th>Factuuradres</th><th>Verwijderen</tr>";
+    echo "<table class='klanttabel'><tr><th>Bedrijsnaam</th><th>Email</th><th>Adres</th><th>Postcode</th><th>Factuuradres</th><th>Verwijderen</tr>";
     while($row = $result->fetch_assoc()) {
       echo "<tr>
-      <td> ".$row["Bedrijfsnaam"]."</td>
+      <td>".$row["Bedrijfsnaam"]."</td>
       <td>".$row["Email"]."</td>
       <td>".$row["Adres"]."</td>
       <td>".$row["Postcode"]."</td>

@@ -52,8 +52,8 @@
 
 
     if (isset($_POST)) {
-        $un=$_POST['email'];
-        $pw=$_POST['wachtwoord'];
+        $un=$_POST['Email'];
+        $pw=$_POST['Wachtwoord'];
 
  
         $sql = "SELECT email  FROM users WHERE Email = '".$un."' AND wachtwoord = '".$pw."'";
