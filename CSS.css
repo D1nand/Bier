@@ -18,6 +18,16 @@ table, th, td {
   td{
       text-align: center;
   }
+  .button{
+    margin-left: 21.3%;
+  }
+  .aantal{
+    width: 15%;
+  }
+  .geld{
+   position: absolute;  
+   margin-left: 10.2%;
+  }
 
     .k{
         text-decoration: none;
@@ -52,11 +62,6 @@ table, th, td {
 .input{
   font-size: x-large;  
 }
-.aantal{
-  position: relative;
-  right: 16.5%;
-}
-
 
   .nav{
     overflow: hidden;
@@ -128,17 +133,18 @@ table, th, td {
   transition: 0.3s;
 }
 .toevoegknop{
-background-color: white;
+background-color: rgb(60, 255, 60);
 margin-left: 10px;
 margin-top: 70px;
-padding: 15px;
+padding: 30px;
 float: right;
 text-decoration: none;
 color: black;
 outline: 2px solid #000;
 }
 .toevoegknop:hover{
-  background-color: whitesmoke;
+  background-color: yellow;
+  color: white;
 }
 .accountformulier{
 padding-left: 250px;
@@ -202,7 +208,7 @@ box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
 .lichaam {
   width: 100%;
   min-height: 100vh;
-  background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url();
+  background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(beger\ met\ bomen.jpg);
   background-position: center;
   background-size: cover;
   display: flex;
@@ -354,5 +360,4 @@ box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
   @media(max-width:570px){
 
   }
-  
 

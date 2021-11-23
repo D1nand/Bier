@@ -124,7 +124,6 @@ if (isset($_POST['submit'])) {
             $BOUNDARY="anystring";
             
             $headers =<<<END
-            From: <t88577457@gmail.com>
             Content-Type: multipart/mixed; boundary=$BOUNDARY
             END;
             
