@@ -43,7 +43,7 @@
     </script>
        
      <center>
-        <h1 style="padding-bottom: 4%;">Orderoverzicht</h1>
+        <h1>Orderoverzicht</h1>
       </center>
     </body>
 </html>
