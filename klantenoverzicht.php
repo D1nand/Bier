@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <link rel="stylesheet" href="CSS.css">
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
 </head>
 
 <body>
@@ -68,7 +70,13 @@ if ($conn->connect_error){
 if ($result->num_rows > 0) {
     echo "<table  id='mainnn' class='klanttabel'><tr><th>Bedrijsnaam</th><th>Email</th><th>Adres</th><th>Postcode</th><th>Factuuradres</th><th>Verwijderen</tr>";
     while($row = $result->fetch_assoc()) {
-      echo "<tr><td>".$row["Bedrijfsnaam"]."</td><td>".$row["Email"]."</td><td>".$row["Adres"]."</td><td>".$row["Postcode"]."</td><td>".$row["Factuuradres"]."</td><td><a href='klantenoverzicht.php?deletePost=".$row['Id']."'<span class='Verwijderen'></span>Verwijderen</a></td>";
+      echo "<tr>
+      <td> ".$row["Bedrijfsnaam"]."</td>
+      <td>".$row["Email"]."</td>
+      <td>".$row["Adres"]."</td>
+      <td>".$row["Postcode"]."</td>
+      <td>".$row["Factuuradres"]."</td>
+      <td><a href='klantenoverzicht.php?deletePost=".$row['Id']."'<span class='Verwijderen'></span>Verwijderen</a></td>";
     }
     echo '</table>';
 }
