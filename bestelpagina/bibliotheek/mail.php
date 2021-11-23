@@ -16,18 +16,16 @@ if (isset($_POST['submit'])) {
     $adres = $_POST['adres'];
     $postcode = $_POST['postcode'];
     $aantal = $_POST['aantal'];
-    $datum =    date("Y-m-s");
-    $id=
+    $datum =    date("Y-m-d");
     
     
     $sql = "INSERT INTO `betaling`(`Naam`, `E-mail`, `Adres`, `Postcode`, `Aantal`, `Datum`) VALUES ('$naam', '$email', '$adres', '$postcode', $aantal, '$datum')";
     
-    echo $sql;
     $insert = $mysqli->query($sql);
     
     
     if ( $insert ) {
-        echo "Succes! Row ID: {$mysqli->insert_id}";
+            
         
             //call the FPDF library
             require('fpdf.php');
@@ -110,8 +108,8 @@ if (isset($_POST['submit'])) {
             $pdf->Cell(4 ,5,'$',1,0);
             $pdf->Cell(30 ,5,'?',1,1,'R');//end of line
             
-            $naam=$_POST['naam'];
-            $to = "t88577457@gmail.com";
+            $naam= $_POST['naam'];
+            $to = $_POST['email'];
             $subject = "Bierbrouwerij DE BOER";
             
             $separator = md5(time());
@@ -150,6 +148,8 @@ if (isset($_POST['submit'])) {
             
             mail( $to, $subject, $body, $headers );
             header("location: /Bierverkoopmanagement/bestelpagina/Bestelpagina.html");
+
+            
             
     } else {
         die("Error: {$mysqli->errno} : {$mysqli->error}");
