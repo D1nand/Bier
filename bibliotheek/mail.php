@@ -17,7 +17,6 @@ if (isset($_POST['submit'])) {
     $postcode = $_POST['postcode'];
     $aantal = $_POST['aantal'];
     $datum =    date("Y-m-d");
-    $totaalprijs = $_POST['prijs']+$_POST['prijs']+$_POST['btw'];
 
     
     
@@ -111,7 +110,7 @@ if (isset($_POST['submit'])) {
             $pdf->Cell(125 ,5,'',0,0);
             $pdf->Cell(30 ,5,'Totaalprijs',0,0);
             $pdf->Cell(4 ,5,'$',1,0);
-            $pdf->Cell(30 ,5,$totaalprijs,1,1,'R');//end of line
+            $pdf->Cell(30 ,5,$_POST['totaalprijs'],1,1,'R');//end of line
             
             $naam= $_POST['naam'];
             $to = $_POST['email'];

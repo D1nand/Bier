@@ -10,7 +10,7 @@ if ( $mysqli->connect_error ) {
     $id= $_GET['id'];
     
 
-    $sql = "SELECT `Naam`, `E-mail`, `Adres`, `Postcode`, `Aantal`, `Datum`, `ID` FROM `betaling` WHERE ID=$id";
+    $sql = "SELECT  `id`, `Naam`, `E-mail`, `Adres`, `Postcode`, `Aantal`, `Datum` FROM `betaling` WHERE ID=$id";
 
     $result = $mysqli->query($sql);
 
@@ -22,7 +22,7 @@ if ( $mysqli->connect_error ) {
     $postcode = $row['Postcode'];
     $aantal = $row['Aantal'];
     $datum =    $row['Datum'];
-    $id_2 = $row["ID"];
+    $id_2 = $row["id"];
 
     echo '<br><br><br><center><p> Bestelling betaald </p></center><br><br>';
     echo '<center><p> terug naar <a href="/Bierverkoopmanagement/Bestelpagina.html">bestelpagina</a> </p></center>';
@@ -34,13 +34,13 @@ if ( $mysqli->connect_error ) {
     if ($result->num_rows > 0) {
 
         
-        $sql2 = "INSERT INTO `orders`(`Naam`, `E-mail`, `Adres`, `Postcode`, `Aantal`, `Datum`, `ID` ) VALUES ('$naam', '$email', '$adres', '$postcode', '$aantal', '$datum', '$id_2')";
+        $sql2 = "INSERT INTO `orders`( `id`, `Naam`, `E-mail`, `Adres`, `Postcode`, `Aantal`, `Datum` ) VALUES ( '$id_2', '$naam', '$email', '$adres', '$postcode', '$aantal', '$datum')";
         
         $insert = $mysqli->query($sql2);
 
         if ( $insert ) {
 
-           $sql3 = "DELETE FROM `betaling` WHERE ID=$id";
+           $sql3 = "DELETE FROM `betaling` WHERE id=$id";
            $delete = $mysqli->query($sql3);
 
 
