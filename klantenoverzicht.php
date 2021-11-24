@@ -63,11 +63,11 @@ $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
 if ($conn->connect_error){
     die ("connection failed: " . $conn->connect_error);
 }
- $sql = "SELECT id, bedrijfsnaam, email, adres, postcode, FROM users ORDER BY id";
- $result = $conn->query($sql);
+ $sql = "SELECT Id, Bedrijfsnaam, Email, Adres, Postcode, Factuuradres FROM users ORDER BY Id";
+ $result = mysqli_query($conn, $sql);
 
 
-if ($result->num_rows > 0) {
+if ($result -> num_rows > 0) {
     echo "<table class='klanttabel'><tr><th>Bedrijfsnaam</th><th>Email</th><th>Adres</th><th>Postcode</th><th>Factuuradres</th><th>Verwijderen</tr>";
     while($row = $result->fetch_assoc()) {
       echo "<tr>
