@@ -25,7 +25,7 @@
         <a href="#" class="knop-sluit" onclick="closeSideMenu()">&times;</a>
         <a href="orderoverzicht.php">Orderoverzicht</a>
         <a href="klantenoverzicht.php">Klantenoverzicht</a>
-        <a href="login.php">Uitloggen</a>
+        <a href="index.php">Uitloggen</a>
     </div>
     
     <div id="mainn">
