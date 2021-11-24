@@ -25,7 +25,7 @@ if ( $mysqli->connect_error ) {
     $id_2 = $row["ID"];
 
     echo '<br><br><br><center><p> Bestelling betaald </p></center><br><br>';
-    echo '<center><p> terug naar <a href="/Bierverkoopmanagement/bestelpagina/Bestelpagina.html">bestelpagina</a> </p></center>';
+    echo '<center><p> terug naar <a href="/Bierverkoopmanagement/Bestelpagina.html">bestelpagina</a> </p></center>';
 
     }
     

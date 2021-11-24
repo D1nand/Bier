@@ -17,6 +17,8 @@ if (isset($_POST['submit'])) {
     $postcode = $_POST['postcode'];
     $aantal = $_POST['aantal'];
     $datum =    date("Y-m-d");
+    $totaalprijs = $_POST['prijs']+$_POST['prijs'];
+
     
     
     $sql = "INSERT INTO `betaling`(`Naam`, `E-mail`, `Adres`, `Postcode`, `Aantal`, `Datum`) VALUES ('$naam', '$email', '$adres', '$postcode', $aantal, '$datum')";
@@ -51,7 +53,7 @@ if (isset($_POST['submit'])) {
             
             $pdf->Cell(130 ,5,'',0,0);
             $pdf->Cell(25 ,5,'Factuur #',0,0);
-            $pdf->Cell(34 ,5,'[?]',0,1);//end of line
+            $pdf->Cell(34 ,5,$mysqli->insert_id,0,1);//end of line
             
             
             //make a dummy empty cell as a vertical spacer
@@ -89,24 +91,24 @@ if (isset($_POST['submit'])) {
             
             $pdf->Cell(125 ,5,'Bier',1,0);
             $pdf->Cell(30 ,5,$_POST['aantal'],1,0);
-            $pdf->Cell(34 ,5,'?',1,1,'R');//end of line
+            $pdf->Cell(34 ,5,'',1,1,'R');//end of line
             
             $pdf->Cell(125 ,5,'',0,0);
             $pdf->Cell(30 ,5,'Subtotaal',0,0);
             $pdf->Cell(4 ,5,'$',1,0);
-            $pdf->Cell(30 ,5,'?',1,1,'R');//end of line
+            $pdf->Cell(30 ,5,$_POST['prijs'],1,1,'R');//end of line
             
             
             
             $pdf->Cell(125 ,5,'',0,0);
             $pdf->Cell(30 ,5,'Verzendkosten',0,0);
             $pdf->Cell(4 ,5,'$',1,0);
-            $pdf->Cell(30 ,5,'?',1,1,'R');//end of line
+            $pdf->Cell(30 ,5,$_POST['verzendkosten'],1,1,'R');//end of line
             
             $pdf->Cell(125 ,5,'',0,0);
             $pdf->Cell(30 ,5,'Totaalprijs',0,0);
             $pdf->Cell(4 ,5,'$',1,0);
-            $pdf->Cell(30 ,5,'?',1,1,'R');//end of line
+            $pdf->Cell(30 ,5,$totaalprijs,1,1,'R');//end of line
             
             $naam= $_POST['naam'];
             $to = $_POST['email'];
@@ -134,7 +136,7 @@ if (isset($_POST['submit'])) {
             Geachte $naam, in de bijlage vind u de factuur voor de door u geplaatste bestelling.
                         
             
-            Betaal: http://localhost/Bierverkoopmanagement/bestelpagina/bibliotheek/Betaal.php?id=$mysqli->insert_id 
+            Betaal: http://localhost/Bierverkoopmanagement/bibliotheek/Betaal.php?id=$mysqli->insert_id 
             
             --$BOUNDARY
             Content-Type: application/pdf
@@ -146,7 +148,7 @@ if (isset($_POST['submit'])) {
             END;
             
             mail( $to, $subject, $body, $headers );
-            header("location: /Bierverkoopmanagement/bestelpagina/Bestelpagina.html");
+            header("location: /Bierverkoopmanagement/Bestelpagina.html");
 
             
             

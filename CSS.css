@@ -24,10 +24,17 @@ table, th, td {
   .aantal{
     width: 15%;
   }
+
   .geld{
-   position: absolute;  
-   margin-left: 10.2%;
+    border-style: outset;
+    border-left: none;
+    border-right: none;
   }
+ 
+.prijs{
+border: none;
+font-size: medium;
+}    
 
     .k{
         text-decoration: none;
