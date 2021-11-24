@@ -8,10 +8,24 @@
         <script>
             function mult(value){
                 var x, y ;
-                x= 2.50 * value ;
-                y= 3 * value ;
+                var x = 2.50 * value ;
+
+                x = x.toFixed(2);
+                
+                if(x>25) {
+                    var y = 5;
+                    y = y.toFixed(2);
+
+                } 
+                else {
+                    var y = 7.50;
+                    y = y.toFixed(2);
+
+                 }
 
                 document.getElementById('out2x').value = x;
+                document.getElementById('out3x').value = y;
+
             }
         </script>
 
@@ -39,8 +53,8 @@
             <p>kjelnkjfsnfkjs</p>
 
        
-            <p class="geld">totale prijs: <input type="text" id="out2x" name="" readonly> </p> <br>
-           
+            <p class="geld" >totale prijs: &euro; <input type="number" id="out2x" class="prijs" value="0" name="prijs" readonly> </p> <br>
+            <p class="geld">Verzendkosten: &euro; <input type="number" id="out3x" class="prijs" value="0" name="verzendkosten" readonly> </p> <br>
 
        
           
