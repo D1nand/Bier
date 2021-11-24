@@ -24,10 +24,17 @@ table, th, td {
   .aantal{
     width: 15%;
   }
+
   .geld{
-   position: absolute;  
-   margin-left: 10.2%;
+    border-style: outset;
+    border-left: none;
+    border-right: none;
   }
+ 
+.prijs{
+border: none;
+font-size: medium;
+}    
 
     .k{
         text-decoration: none;
@@ -133,7 +140,7 @@ table, th, td {
   transition: 0.3s;
 }
 .toevoegknop{
-background-color: rgb(60, 255, 60);
+background-color: white;
 margin-left: 10px;
 margin-top: 70px;
 padding: 30px;
@@ -143,8 +150,7 @@ color: black;
 outline: 2px solid #000;
 }
 .toevoegknop:hover{
-  background-color: yellow;
-  color: white;
+  background-color: whitesmoke
 }
 .accountformulier{
 padding-left: 250px;
