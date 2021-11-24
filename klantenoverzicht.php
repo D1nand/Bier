@@ -55,20 +55,20 @@
 
 <?php
 $dbServername = "localhost";
-$dbUsername = "deb85590_p21t2";
-$dbPassword = "pv9EptlJ";
-$dbName = "deb85590_p21t2";
+$dbUsername = "root";
+$dbPassword = "";
+$dbName = "bier";
 
 $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
 if ($conn->connect_error){
     die ("connection failed: " . $conn->connect_error);
 }
- $sql = "SELECT Id, Bedrijfsnaam, Email, Adres, Postcode, Factuuradres FROM users ORDER BY Id";
+ $sql = "SELECT id, bedrijfsnaam, email, adres, postcode, FROM users ORDER BY id";
  $result = $conn->query($sql);
 
 
 if ($result->num_rows > 0) {
-    echo "<table class='klanttabel'><tr><th>Bedrijsnaam</th><th>Email</th><th>Adres</th><th>Postcode</th><th>Factuuradres</th><th>Verwijderen</tr>";
+    echo "<table class='klanttabel'><tr><th>Bedrijfsnaam</th><th>Email</th><th>Adres</th><th>Postcode</th><th>Factuuradres</th><th>Verwijderen</tr>";
     while($row = $result->fetch_assoc()) {
       echo "<tr>
       <td>".$row["Bedrijfsnaam"]."</td>
