@@ -1,11 +1,9 @@
 <?php
  
-$Dag = date("d");
-$Maand = date("m");
-$jaar = date("Y");
-$dag2 = $Dag-4;
-$datum = $jaar.'-'.$Maand.'-'.$dag2;
+ $datum =    date("Y-m-d");
 
-echo $datum
+if($datum=2021-11-23){
+    echo $datum;
+}
 
  ?>

@@ -43,16 +43,9 @@ if ( $mysqli->connect_error ) {
            $sql3 = "DELETE FROM `betaling` WHERE id=$id";
            $delete = $mysqli->query($sql3);
 
+           $sql4 = "DELETE FROM `betaling` WHERE Datum<$datum";
+           $mysqli->query($sql4);
 
-            
-            $Dag = date("d");
-            $Maand = date("m");
-            $jaar = date("Y");
-            $dag2 = $Dag-1;
-            $datum2 = $jaar.'-'.$Maand.'-'.$dag2;
-
-            $sql4 = "DELETE FROM `betaling` WHERE Datum=$datum2";
-            $mysqli->query($sql4);
 
 
            if ( $delete ) {
@@ -100,9 +93,12 @@ if ( $mysqli->connect_error ) {
 
      else {
         die("Error: {$mysqli->errno} : {$mysqli->error}");
-    }
+     }
+
+
+  
     
     $mysqli->close();
-
+    
 
 ?>
