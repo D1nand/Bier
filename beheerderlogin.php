@@ -38,10 +38,10 @@
     </body>
     </html>
     <?php
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "bier";
+$dbServername = "localhost";
+$dbUsername = "root";
+$dbPassword = "";
+$dbName = "bier";
 
         // Create connection
     // Create connection
