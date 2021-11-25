@@ -1,8 +1,15 @@
-<?
-if (isset($_POST['submit'])) {
-header("location: index.php");
-}
+<?php
 
+if (isset($_POST['submit'])) {
+
+ $email=$_GET['email'];  
+ $aantal= $_POST['aantal'] ;
+ $totaalprijs= $_POST['totaalprijs'] ;
+ $verzendkosten= $_POST['verzendkosten'] ;
+
+header("location: bibliotheek/mail2.php?email=$email&aantal=$aantal&totaalprijs= $totaalprijs&verzendkosten=$verzendkosten");
+
+}
 ?>
 <html>
     <Head>
@@ -63,7 +70,7 @@ header("location: index.php");
         <center> 
         <div class="bestelformulierP">
             <div class="knop">
-            <a style="text-decoration: none;" href="Bestelpagina.html"> <h1 class="par k">PARTICULIER</h1> </a>
+            <a style="text-decoration: none;" href="Bestelpagina.html" onclick="return confirm('Weet u zeker dat u wilt uitloggen?')"> <h1 class="par k">PARTICULIER</h1> </a>
             <h1 class="zak k" >ZAKELIJK</h1> 
             </div>
             <form class="contact-form" action="" method="POST" >
@@ -74,7 +81,7 @@ header("location: index.php");
             </div>
 
        
-            
+            <p><? echo $_GET['email']; ?></p>
             <p class="geld">prijs inc. btw: &euro; <input type="number" id="out2x" class="prijs line" value="0" name="totaalprijs" readonly> </p><br>
             <p class="geld">verzendkosten: + &euro; <input type="number" id="out3x" class="prijs" value="0" name="verzendkosten" readonly> </p>
           

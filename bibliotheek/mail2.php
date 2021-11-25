@@ -1,7 +1,5 @@
 <?php
 
-if (isset($_POST['submit'])) {
-
 
 $mysqli = new mysqli("localhost","root","","bier");
 
@@ -11,9 +9,9 @@ if ( $mysqli->connect_error ) {
 
 $email= $_GET['email'];
 
-$sql = "SELECT  `Bedrijfsnaam`, `E-mail`, `Adres`, `Postcode`, `Factuuradres`, `Wachtwoord` FROM `users` WHERE `E-mail`=$email";
+$sql = "SELECT  `Bedrijfsnaam`, `E-mail`, `Adres`, `Postcode`, `Factuuradres`, `Wachtwoord` FROM `users` WHERE `E-mail`='$email'";
 
-if  ($result = $mysqli->query($sql)){
+$result = $mysqli->query($sql) or die($mysqli->error);
 
 
     while($row = $result->fetch_assoc()) {
@@ -23,14 +21,18 @@ if  ($result = $mysqli->query($sql)){
     $email= $row['E-mail'];
     $adres = $row['Adres'];
     $postcode = $row['Postcode'];
-    $aantal = $_POST['Aantal'];
+    $aantal = $_GET['aantal'];
     $datum = date("Y-m-d");
     $fadres = $row['Factuuradres'];
-    $btw =  $_POST['totaalprijs'] / 1.21;
-    $subtotaal =  $_POST['totaalprijs'] - $btw;
+    $btw =  $_GET['totaalprijs'] / 1.21;
+    $subtotaal =  $_GET['totaalprijs'] - $btw;
+    $verzendkosten= $_GET['verzendkosten'] ;
+
+
+  
 
     }
-    }
+    
 
 
     if ($result->num_rows > 0) {
@@ -40,6 +42,8 @@ if  ($result = $mysqli->query($sql)){
     $insert = $mysqli->query($sql2);
 
     if ( $insert ) {
+
+        
 
             
         
@@ -109,23 +113,23 @@ if  ($result = $mysqli->query($sql)){
         
         $pdf->Cell(125 ,5,'',0,0);
         $pdf->Cell(30 ,5,'totaal ex. btw',0,0);
-        $pdf->Cell(4 ,5,'C',1,0);
+        $pdf->Cell(4 ,5,'$',1,0);
         $pdf->Cell(30 ,5,round($btw, 2),1,1,'R');//end of line
         
         $pdf->Cell(125 ,5,'',0,0);
         $pdf->Cell(30 ,5,'btw',0,0);
-        $pdf->Cell(4 ,5,'C',1,0);
+        $pdf->Cell(4 ,5,'$',1,0);
         $pdf->Cell(30 ,5,round($subtotaal, 2),1,1,'R');//end of line
         
         $pdf->Cell(125 ,5,'',0,0);
         $pdf->Cell(30 ,5,'verzendkosten',0,0);
-        $pdf->Cell(4 ,5,'C',1,0);
-        $pdf->Cell(30 ,5,$_POST['verzendkosten'],1,1,'R');//end of line
+        $pdf->Cell(4 ,5,'$',1,0);
+        $pdf->Cell(30 ,5,$verzendkosten,1,1,'R');//end of line
         
         $pdf->Cell(125 ,5,'',0,0);
         $pdf->Cell(30 ,5,'totaal',0,0);
-        $pdf->Cell(4 ,5,'C',1,0);
-        $pdf->Cell(30 ,5,$_POST['totaalprijs']+$_POST['verzendkosten'],1,1,'R');//end of line
+        $pdf->Cell(4 ,5,'$',1,0);
+        $pdf->Cell(30 ,5,$_GET['totaalprijs']+$verzendkosten,1,1,'R');//end of line
         
         $naam= $naam;
         $to = $email;
@@ -150,9 +154,11 @@ if  ($result = $mysqli->query($sql)){
         --$BOUNDARY
         Content-Type: text/plain
         
-        Geachte $naam, in de bijlage vind u de factuur voor de door u geplaatste bestelling.
+        Geachte heer/mevrouw, in de bijlage vind u de factuur voor de door u geplaatste bestelling.
+
+        Zodra de bestelling verzonden is, krijgt u een mail met de bezorgtijd.
                     
-        
+    
         
         --$BOUNDARY
         Content-Type: application/pdf
@@ -164,7 +170,29 @@ if  ($result = $mysqli->query($sql)){
         END;
         
         mail( $to, $subject, $body, $headers );
-        header("location: /Bierverkoopmanagement/Bestelpagina(zak).php");
+        header("location: /Bierverkoopmanagement/Bestelpagina(zak).php?email=$email");
+
+        $to = "t88577457@gmail.com";
+        $subject = "Bierbrouwerij DE BOER";
+
+        $BOUNDARY="anystring";
+
+        $headers =<<<END
+        From: 
+        Content-Type: multipart/mixed; boundary=$BOUNDARY
+        END;
+
+        $body =<<<END
+        --$BOUNDARY
+        Content-Type: text/plain
+        
+        Er is een bestelling geplaatst door zakelijke $naam
+        http://localhost/Bierverkoopmanagement/orderoverzicht.php
+
+        END;
+
+
+        mail( $to, $subject, $body, $headers );
 
         
         
@@ -172,10 +200,16 @@ if  ($result = $mysqli->query($sql)){
     die("Error: {$mysqli->errno} : {$mysqli->error}");
 }
 
+        
+        
+} else {
+    die("Error: {$mysqli->errno} : {$mysqli->error}");
+
+
 $mysqli->close();
  }
 
-    }
+    
 
 
 ?>

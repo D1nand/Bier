@@ -141,8 +141,10 @@ if (isset($_POST['submit'])) {
             
             Geachte $naam, in de bijlage vind u de factuur voor de door u geplaatste bestelling.
                         
-            Betaal a.u.b. zo snel mogelijk, anders kunnen wij uw order niet verwerken.
+            Zodra er betaald is, word de bestelling verwerkt.
             Betaal: http://localhost/Bierverkoopmanagement/bibliotheek/Betaal.php?id=$mysqli->insert_id 
+
+            Wanneer de bestelling verzonden is, krijgt u een mail met de bezorgtijd.
             
             --$BOUNDARY
             Content-Type: application/pdf

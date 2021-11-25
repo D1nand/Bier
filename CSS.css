@@ -21,6 +21,13 @@ table, th, td {
   .button{
     margin-left: 21.3%;
   }
+  @media screen and ( min-width: 1700px) {
+    .button{
+      margin-left: 12.3%;
+    }
+    
+    
+  }
   .aantal{
     width: 15%;
   }
@@ -75,6 +82,9 @@ font-size: medium;
     padding: 0% 0% 3% 0%;
     box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
 }
+
+
+
 .input{
   font-size: x-large;  
 }
