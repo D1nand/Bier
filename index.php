@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
 <body class="lichaam">
         
         <div class="container">
-        <form  name="loginn" class="login-email" action="bestelpagina.html." method="POST"> 
+        <form  name="loginn" class="login-email" action="bestelpagina(zak).html." method="POST"> 
                 <p class="login-text" style="font-size: 2rem; font-weight: 800;">Login</p>
                 <div class="input-group">
                     <input name="email" type="E-mail"  placeholder="E-mail" required>
