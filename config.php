@@ -3,7 +3,7 @@
 $server = "localhost";
 $user = "root";
 $pass = "";
-$dbname = "login_register_pure_coding";
+$dbname = "bier";
 
 $conn = mysqli_connect($server, $user, $pass, $dbname);
 
