@@ -67,6 +67,7 @@ header("location: bibliotheek/mail2.php?email=$email&aantal=$aantal&totaalprijs=
 
     </Head>
     <body>
+    <a href="Bestelpagina.html" onclick="return confirm('Weet u zeker dat u wilt uitloggen?')" class="loginknop">Log uit</a>
         <center> 
         <div class="bestelformulierP">
             <div class="knop">
