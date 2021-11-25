@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?
+if (isset($_POST['submit'])) {
+header("location: index.php");
+}
+
+?>
 <html>
     <Head>
         <link rel="stylesheet" href="CSS.css">
@@ -61,18 +66,17 @@
             <a style="text-decoration: none;" href="Bestelpagina.html"> <h1 class="par k">PARTICULIER</h1> </a>
             <h1 class="zak k" >ZAKELIJK</h1> 
             </div>
-            <form class="contact-form" action="bibliotheek/mail2.php" method="POST" >
+            <form class="contact-form" action="" method="POST" >
             <div class="formulier">
-    
+           
             <input type="number" min="1" max="999" class="input aantal" onkeyup="mult(this.value)" name="aantal" placeholder="Aantal" required> 
             <button name="submit" type="submit" class="input button">Bestel</button> <br> <br> <br> 
             </div>
 
        
+            
             <p class="geld">prijs inc. btw: &euro; <input type="number" id="out2x" class="prijs line" value="0" name="totaalprijs" readonly> </p><br>
             <p class="geld">verzendkosten: + &euro; <input type="number" id="out3x" class="prijs" value="0" name="verzendkosten" readonly> </p>
-
-       
           
 
         </div>

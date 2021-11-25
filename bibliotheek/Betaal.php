@@ -10,7 +10,7 @@ if ( $mysqli->connect_error ) {
     $id= $_GET['id'];
     
 
-    $sql = "SELECT  `id`, `Naam`, `E-mail`, `Adres`, `Postcode`, `Aantal`, `Datum` FROM `betaling` WHERE ID=$id";
+    $sql = "SELECT  `id`, `Naam`, `E-mail`, `Adres`, `Postcode`, `Aantal`, `Datum` FROM `betaling` WHERE id=$id";
 
     $result = $mysqli->query($sql);
 
