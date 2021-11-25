@@ -15,8 +15,7 @@
     <body class="lichaam">
         
         <div class="container">
-        <form action="loginn.php" method="POST">
-        <form class="login-email">
+        <form  name="loginn" class="login-email" action="login.php" method="POST"> 
                 <p class="login-text" style="font-size: 2rem; font-weight: 800;">Login</p>
                 <div class="input-group">
                     <input name="email" type="E-mail"  placeholder="E-mail" required>
@@ -51,7 +50,7 @@
 
 
 
-    if (isset($_POST)) {
+    if (isset($_POST['loginn'])) {
         $un=$_POST['Email'];
         $pw=$_POST['Wachtwoord'];
 
@@ -62,7 +61,7 @@
         if ($result->num_rows > 0) {
 
         // succes   if ($pw==$row["password"]) {
-            header ("location:voorbeeld.html");
+            header ("location:bestelpagina.html");
         }
 
         else{ 
