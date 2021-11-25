@@ -186,7 +186,7 @@ $result = $mysqli->query($sql) or die($mysqli->error);
         --$BOUNDARY
         Content-Type: text/plain
         
-        Er is een bestelling geplaatst door zakelijke $naam
+        Er is een bestelling geplaatst door $naam
         http://localhost/Bierverkoopmanagement/orderoverzicht.php
 
         END;
