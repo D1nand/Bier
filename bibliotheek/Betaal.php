@@ -23,6 +23,7 @@ if ( $mysqli->connect_error ) {
     $aantal = $row['Aantal'];
     $datum =    $row['Datum'];
     $id_2 = $row["id"];
+    $datum2 = date("Y-m-d");
 
     echo '<br><br><br><center><p> Bestelling betaald </p></center><br><br>';
     echo '<center><p> terug naar <a href="/Bierverkoopmanagement/Bestelpagina.html">bestelpagina</a> </p></center>';
@@ -43,7 +44,7 @@ if ( $mysqli->connect_error ) {
            $sql3 = "DELETE FROM `betaling` WHERE id=$id";
            $delete = $mysqli->query($sql3);
 
-           $sql4 = "DELETE FROM `betaling` WHERE Datum<$datum";
+           $sql4 = "DELETE FROM `betaling` WHERE Datum<$datum2";
            $mysqli->query($sql4);
 
 
