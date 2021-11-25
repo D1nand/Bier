@@ -21,13 +21,13 @@ if (isset($_POST['submit'])) {
 		$_SESSION['username'] = $row['username'];
 		header("Location: bestelpagina(zak).html");
 	} else {
-		echo "<script>alert('Woops! Email or Password is Wrong.')</script>";
+		echo "<script>alert('Woops! Email of wachtwoord is fout.')</script>";
 	}
 }
-if($un=='Admin@gmail.com' AND $pw=='Admin'){
-    header("location: orderoverzicht.html");
-    exit();
-}
+if($row["usertype"]=="admin")
+
+    header("location: orderoverzicht.php")
+
 
 ?>
 
