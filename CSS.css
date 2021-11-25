@@ -19,7 +19,7 @@ table, th, td {
       text-align: center;
   }
   .button{
-    margin-left: 21.3%;
+    margin-left: 20.3%;
   }
 
 
@@ -67,11 +67,19 @@ font-size: medium;
   margin-top: 10%;
 }
 .bestelformulierP{
- 
+    margin: 5% 20% 30% 20%;
+    padding: 0% 0% 3% 0%;
+    box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
+}
+@media screen and ( min-width: 1000px) {
+  .bestelformulierP{
     margin: 5% 30% 30% 30%;
     padding: 0% 0% 3% 0%;
     box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
 }
+}
+
+
 .input{
   font-size: x-large;  
 }
