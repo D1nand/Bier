@@ -17,7 +17,9 @@ if (isset($_POST['submit'])) {
     $postcode = $_POST['postcode'];
     $aantal = $_POST['aantal'];
     $datum =    date("Y-m-d");
-    $totaalprijs = $_POST['prijs']+$_POST['prijs']+$_POST['btw'];
+    $btw =  $_POST['totaalprijs'] / 1.21;
+    $subtotaal =  $_POST['totaalprijs'] - $btw;
+
 
     
     
@@ -94,24 +96,24 @@ if (isset($_POST['submit'])) {
             $pdf->Cell(34 ,5,'',1,1,'R');//end of line
             
             $pdf->Cell(125 ,5,'',0,0);
-            $pdf->Cell(30 ,5,'Subtotaal',0,0);
+            $pdf->Cell(30 ,5,'totaal ex. btw',0,0);
             $pdf->Cell(4 ,5,'$',1,0);
-            $pdf->Cell(30 ,5,$_POST['prijs'],1,1,'R');//end of line
+            $pdf->Cell(30 ,5,round($btw, 2),1,1,'R');//end of line
             
             $pdf->Cell(125 ,5,'',0,0);
-            $pdf->Cell(30 ,5,'BTW',0,0);
+            $pdf->Cell(30 ,5,'btw',0,0);
             $pdf->Cell(4 ,5,'$',1,0);
-            $pdf->Cell(30 ,5,$_POST['btw'],1,1,'R');//end of line
+            $pdf->Cell(30 ,5,round($subtotaal, 2),1,1,'R');//end of line
             
             $pdf->Cell(125 ,5,'',0,0);
-            $pdf->Cell(30 ,5,'Verzendkosten',0,0);
+            $pdf->Cell(30 ,5,'verzendkosten',0,0);
             $pdf->Cell(4 ,5,'$',1,0);
             $pdf->Cell(30 ,5,$_POST['verzendkosten'],1,1,'R');//end of line
             
             $pdf->Cell(125 ,5,'',0,0);
-            $pdf->Cell(30 ,5,'Totaalprijs',0,0);
+            $pdf->Cell(30 ,5,'totaal',0,0);
             $pdf->Cell(4 ,5,'$',1,0);
-            $pdf->Cell(30 ,5,$totaalprijs,1,1,'R');//end of line
+            $pdf->Cell(30 ,5,$_POST['totaalprijs']+$_POST['verzendkosten'],1,1,'R');//end of line
             
             $naam= $_POST['naam'];
             $to = $_POST['email'];
