@@ -6,9 +6,9 @@ session_start();
 
 error_reporting(0);
 
-if (isset($_SESSION['Admin'])) {
-    header("Location: orderoverzicht.html");
-}
+//if (isset($_SESSION['Admin'])) {
+ //   header("Location: orderoverzicht.html");
+//}
 
 if (isset($_POST['submit'])) {
 	$email = $_POST['email'];
