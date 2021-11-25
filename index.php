@@ -7,7 +7,7 @@ session_start();
 error_reporting(0);
 
 if (isset($_SESSION['Admin'])) {
-    header("Location: bestelpagina(zak).html");
+    header("Location: orderoverzicht.html");
 }
 
 if (isset($_POST['submit'])) {
@@ -24,7 +24,10 @@ if (isset($_POST['submit'])) {
 		echo "<script>alert('Woops! Email or Password is Wrong.')</script>";
 	}
 }
-
+if($un=='Admin@gmail.com' AND $pw=='Admin'){
+    header("location: orderoverzicht.html");
+    exit();
+}
 
 ?>
 
@@ -38,7 +41,7 @@ if (isset($_POST['submit'])) {
 
 	<link rel="stylesheet" type="text/css" href="CSS.css">
 
-	<title>Login Form - Pure Coding</title>
+	<title>Login Form</title>
 </head>
 <body class="lichaam">
 	<div class="container">
