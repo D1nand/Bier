@@ -35,7 +35,7 @@ if ( $mysqli->connect_error ) {
     if ($result->num_rows > 0) {
 
         
-        $sql2 = "INSERT INTO `orders`( `id`, `Naam`, `E-mail`, `Adres`, `Postcode`, `Aantal`, `Datum` ) VALUES ( '$id_2', '$naam', '$email', '$adres', '$postcode', '$aantal', '$datum')";
+        $sql2 = "INSERT INTO `orders`( `Naam`, `E-mail`, `Adres`, `Postcode`, `Aantal`, `Datum` ) VALUES ( '$naam', '$email', '$adres', '$postcode', '$aantal', '$datum')";
         
         $insert = $mysqli->query($sql2);
 
