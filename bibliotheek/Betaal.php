@@ -26,7 +26,7 @@ if ( $mysqli->connect_error ) {
     $datum2 = date("Y-m-d");
 
     echo '<br><br><br><center><p> Bestelling betaald </p></center><br><br>';
-    echo '<center><p> terug naar <a href="/Bierverkoopmanagement/Bestelpagina.html">bestelpagina</a> </p></center>';
+    echo '<center><p> terug naar <a href="/Bestelpagina.html">bestelpagina</a> </p></center>';
 
     }
     
