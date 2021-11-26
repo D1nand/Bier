@@ -28,6 +28,9 @@ table, th, td {
     
     
   }
+  .afgerond{
+    color: black;
+  }
 .loginknop{
   text-decoration: underline;
   color: black;
@@ -241,8 +244,6 @@ box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
    color: #000;
  }
 .klanttekst{
-  margin-left: 700px;
-  margin-top: 20px;
   font-size: xx-large;
 }
 .Orders{

@@ -5,6 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie-edge">
         <link rel="stylesheet" href="CSS.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     </Head>
     <body>
       <nav class="nav">
@@ -53,17 +54,37 @@ $dbUsername = "root";
 $dbPassword = "";
 $dbName = "bier";
 
-$conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
-if ($conn->connect_error){
-    die ("connection failed: " . $conn->connect_error);
+$mysqli = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
+if ($mysqli->connect_error){
+    die ("connection failed: " . $mysqli->connect_error);
 }
- $sql = "SELECT Id, Naam, Adres, Postcode, Aantal, Datum FROM orders ORDER BY Id";
- $result = $conn->query($sql);
+ $sql = "SELECT `id`, `Naam`, `E-mail`, `Adres`, `Postcode`, `Aantal`, `Datum`, `Status` FROM orders ORDER BY Id";
+ $result = $mysqli->query($sql);
 
- if ($result->num_rows > 0) {
-     echo "<table class='Orders'><tr><th>ID</th><th>Naam</th><th>Adres</th><th>Postcode</th><th>Aantal</th><th>Datum</th></tr>";
-     while($row = $result->fetch_assoc()){
-        echo "<tr><td>".$row["Id"]."</td><td>".$row["Naam"]."</td><td>".$row["Adres"]."</td><td>".$row["Postcode"]."</td><td>".$row["Aantal"]."</td><td>".$row["Datum"]."</td>";
- }
+     echo "<table class='Orders'><tr><th>id</th><th>Naam</th><th>Adres</th><th>Postcode</th><th>Aantal</th><th>E-mail</th><th>Datum</th><th>Status</th></tr>";
+   
+        
+ 
+ if ($result = $mysqli->query($sql)) {
+    foreach ($result as $row) {
+    echo "
+
+    <tr>
+        <td>" . $row['id'] . "</td> 
+        <td>" . $row['Naam']  . "</td>
+        <td> " . $row['Adres'] .  "</td>
+        <td>" . $row['Postcode'] . "</td>
+        <td>" . $row['Aantal'] . "</td>
+        <td>". $row['E-mail'] . "</td>
+        <td> " . $row['Datum'] . "</td>";
+        if($row['Status'] == 0){
+            // niet afgehandeld. Toon deleteknop (linkje) en groen vinkje (linkje)
+           echo "<td> <a class='afgerond' href='status.php?id=".$row['id']."'><i class='fas fa-check-circle'></i></a></td>";
+        }else{
+            // toon grijs vinkje (geen link)
+           echo "<td> <i class='far fa-check-circle'></i></td>";
+        }
+        }
 }
+
 ?>
