@@ -38,20 +38,22 @@
     <script>
         function openSideMenu(){
             document.getElementById('side-menu').style.width = '250px';
-            document.getElementById('mainnn').style.marginLeft = '250px';
+            document.getElementById('mainn').style.marginLeft = '250px';
         }
         function closeSideMenu(){
             document.getElementById('side-menu').style.width = '0';
-            document.getElementById('mainnn').style.marginLeft = '0';
+            document.getElementById('mainn').style.marginLeft = '0';
         }
     </script>
     
   
-    <a href="accounttoevoegen.php" class="toevoegknop">Account Toevoegen</a>
-    <h1 class="klanttekst">Klantenoverzicht</h1>
+    <a href="accounttoevoegen.php" class="loginknop">Account Toevoegen</a><br><br><br><br>
+    <center>
+    <h1>Klantenoverzicht</h1>
+   
 
     </body>
-</div>
+
 </html>
 
 
