@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <link rel="stylesheet" href="CSS.css">
     <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
-<link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
+    <script type="text/javascript" src="wijzigen.js"></script>
 </head>
 
 <body>
@@ -54,29 +55,37 @@
 
 
 <?php
-$dbServername = "localhost";
-$dbUsername = "root";
-$dbPassword = "";
-$dbName = "bier";
+session_start();
+$host = "localhost";
+$user = "root";
+$password = "";
+$name = "bier";
 
-$conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
+$conn = mysqli_connect($host, $user, $password, $name);
 if ($conn->connect_error){
     die ("connection failed: " . $conn->connect_error);
 }
  $sql = "SELECT Id, Bedrijfsnaam, Email, Adres, Postcode, Factuuradres FROM users ORDER BY Id";
- $result = mysqli_query($conn, $sql);
-
-
+ $result = mysqli_query($conn, "select * from users");
+ 
+?>
+<?php
 if ($result -> num_rows > 0) {
     echo "<table class='klanttabel'><tr><th>Bedrijfsnaam</th><th>Email</th><th>Adres</th><th>Postcode</th><th>Factuuradres</th><th>Verwijderen</tr>";
-    while($row = $result->fetch_assoc()) {
-      echo "<tr>
-      <td>".$row["Bedrijfsnaam"]."</td>
-      <td>".$row["Email"]."</td>
-      <td>".$row["Adres"]."</td>
-      <td>".$row["Postcode"]."</td>
-      <td>".$row["Factuuradres"]."</td>
-      <td><a href='klantenoverzicht.php?deletePost=".$row['Id']."'<span class='Verwijderen'></span>Verwijderen</a></td>";
+    while($row = mysqli_fetch_array($result)) {
+      echo "<tr>"?>
+      <tr>
+<td contenteditable="true" onkeydown="return (event.keyCode!=13);" data-old_value="
+      <?php echo $row["Bedrijfsnaam"];?>" onBlur="saveInlineEdit(this,'Bedrijfsnaam','<?php echo $row["Id"]; ?>')"  onClick="highlightEdit(this);"><?php echo $row["Bedrijfsnaam"]; ?></td>
+      <td contenteditable="true" onkeydown="return (event.keyCode!=13);" data-old_value="
+      <?php echo $row["Email"];?>" onBlur="saveInlineEdit(this,'Email','<?php echo $row["Id"]; ?>')"  onClick="highlightEdit(this);"><?php echo $row["Email"]; ?></td>
+      <td contenteditable="true" onkeydown="return (event.keyCode!=13);" data-old_value="
+      <?php echo $row["Adres"];?>" onBlur="saveInlineEdit(this,'Adres','<?php echo $row["Id"]; ?>')"  onClick="highlightEdit(this);"><?php echo $row["Adres"]; ?></td>
+      <td contenteditable="true" onkeydown="return (event.keyCode!=13);" data-old_value="
+      <?php echo $row["Postcode"];?>" onBlur="saveInlineEdit(this,'Postcode','<?php echo $row["Id"]; ?>')"  onClick="highlightEdit(this);"><?php echo $row["Postcode"]; ?></td>
+      <td contenteditable="true" onkeydown="return (event.keyCode!=13);" data-old_value="
+      <?php echo $row["Factuuradres"];?>" onBlur="saveInlineEdit(this,'Factuuradres','<?php echo $row["Id"]; ?>')"  onClick="highlightEdit(this);"><?php echo $row["Factuuradres"]; ?></td>
+      <?php echo "<td><a href='klantenoverzicht.php?deletePost=".$row['Id']."'<span class='Verwijderen'></span>Verwijderen</a></td>";
     }
     echo '</table>';
 }
