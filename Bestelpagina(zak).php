@@ -16,8 +16,7 @@
         <div id="side-menu" class="sidenavi">
             <a href="#" class="knop-sluit" onclick="closeSideMenu()">&times;</a>
             <a href="Bestelpagina.html" onclick="return confirm('Weet u zeker dat u wilt uitloggen?')">Uitloggen</a>
-            <p class="tekstpart">Deboer@gmail.com</p>
-            <p class="tekstpart2">0616253486</p>
+            <p class="tekstpart">t88577457@gmail.com</p>
         </div>
         
         <div id="mainn">
