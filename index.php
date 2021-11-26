@@ -6,25 +6,28 @@ session_start();
 
 error_reporting(0);
 
-if (isset($_SESSION['Admin@gmail.com'])) {
-    header("orderoverzicht.php");
-}
+//if (isset($_SESSION['Admin'])) {
+ //   header("Location: orderoverzicht.html");
+//}
 
 if (isset($_POST['submit'])) {
 	$email = $_POST['email'];
-	$password = md5($_POST['password']);
+	$password = ($_POST['password']);
 
-	$sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+	$sql = "SELECT * FROM users WHERE `E-mail`='$email' AND `Wachtwoord`='$password'";
 	$result = mysqli_query($conn, $sql);
-
 	if ($result->num_rows > 0) {
 		$row = mysqli_fetch_assoc($result);
 		$_SESSION['username'] = $row['username'];
-		header("Location: orderoverzicht.php");
+		header("Location: Bestelpagina(zak).php?email=$email");
 	} else {
-		echo "<script>alert('Woops! Email or Password is Wrong.')</script>";
+		echo "<script>alert('Woops! Email of wachtwoord is fout.')</script>";
 	}
 }
+if($row["Usertype"]=="admin")
+
+    header("location: orderoverzicht.php")
+
 
 ?>
 
@@ -41,23 +44,19 @@ if (isset($_POST['submit'])) {
 	<title>Login Form</title>
 </head>
 <body class="lichaam">
-        
-        <div class="container">
-        <form  name="loginn" class="login-email" action="bestelpagina(zak).html." method="POST"> 
-                <p class="login-text" style="font-size: 2rem; font-weight: 800;">Login</p>
-                <div class="input-group">
-                    <input name="email" type="E-mail"  placeholder="E-mail" required>
-                </div>
-                <div class="input-group">
-                    <input name="wachtwoord" type="Wachtwoord"  placeholder="Wachtwoord" required>
-                </div>
-                <div class="input-group">
-                    <button class="btn">Login</button>
-                    </div>
-                    <p style="text-decoration:underline " class="login-register-text"> <a href="">Beheerder login</a> </p>
-                </form>
-            </div>
-<p> martijn was het</p>
-
-    </body>
+	<div class="container">
+		<form action="" method="POST" class="login-email">
+			<p class="login-text" style="font-size: 2rem; font-weight: 800;">Login</p>
+			<div class="input-group">
+				<input type="email" placeholder="Email" name="email" value="<?php echo $email; ?>" required>
+			</div>
+			<div class="input-group">
+				<input type="password" placeholder="Password" name="password" value="<?php echo $_POST['password']; ?>" required>
+			</div>
+			<div class="input-group">
+				<button name="submit" class="btn">Login</button>
+			</div>
+		</form>
+	</div>
+</body>
 </html>

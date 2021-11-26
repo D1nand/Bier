@@ -29,6 +29,7 @@ if (isset($_POST['submit'])) {
     
     
     if ( $insert ) {
+
             
         
             //call the FPDF library
@@ -97,22 +98,22 @@ if (isset($_POST['submit'])) {
             
             $pdf->Cell(125 ,5,'',0,0);
             $pdf->Cell(30 ,5,'totaal ex. btw',0,0);
-            $pdf->Cell(4 ,5,'$',1,0);
+            $pdf->Cell(4 ,5,'C',1,0);
             $pdf->Cell(30 ,5,round($btw, 2),1,1,'R');//end of line
             
             $pdf->Cell(125 ,5,'',0,0);
             $pdf->Cell(30 ,5,'btw',0,0);
-            $pdf->Cell(4 ,5,'$',1,0);
+            $pdf->Cell(4 ,5,'C',1,0);
             $pdf->Cell(30 ,5,round($subtotaal, 2),1,1,'R');//end of line
             
             $pdf->Cell(125 ,5,'',0,0);
             $pdf->Cell(30 ,5,'verzendkosten',0,0);
-            $pdf->Cell(4 ,5,'$',1,0);
+            $pdf->Cell(4 ,5,'C',1,0);
             $pdf->Cell(30 ,5,$_POST['verzendkosten'],1,1,'R');//end of line
             
             $pdf->Cell(125 ,5,'',0,0);
             $pdf->Cell(30 ,5,'totaal',0,0);
-            $pdf->Cell(4 ,5,'$',1,0);
+            $pdf->Cell(4 ,5,'C',1,0);
             $pdf->Cell(30 ,5,$_POST['totaalprijs']+$_POST['verzendkosten'],1,1,'R');//end of line
             
             $naam= $_POST['naam'];
@@ -140,8 +141,10 @@ if (isset($_POST['submit'])) {
             
             Geachte $naam, in de bijlage vind u de factuur voor de door u geplaatste bestelling.
                         
-            
+            Zodra er betaald is, word de bestelling verwerkt.
             Betaal: http://localhost/Bierverkoopmanagement/bibliotheek/Betaal.php?id=$mysqli->insert_id 
+
+            Wanneer de bestelling verzonden is, krijgt u een mail met de bezorgtijd.
             
             --$BOUNDARY
             Content-Type: application/pdf
