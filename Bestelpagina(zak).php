@@ -116,7 +116,6 @@ header("location: bibliotheek/mail2.php?email=$email&aantal=$aantal&totaalprijs=
             </div>
 
        
-            <p><? echo $_GET['email']; ?></p>
             <p class="geld">prijs inc. btw: &euro; <input type="number" id="out2x" class="prijs line" value="0" name="totaalprijs" readonly> </p><br>
             <p class="geld">verzendkosten: + &euro; <input type="number" id="out3x" class="prijs" value="0" name="verzendkosten" readonly> </p>
           

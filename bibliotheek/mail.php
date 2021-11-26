@@ -156,7 +156,7 @@ if (isset($_POST['submit'])) {
             END;
             
             mail( $to, $subject, $body, $headers );
-            header("location: /Bierverkoopmanagement/Bestelpagina.html");
+            header("location: /Bestelpagina.html");
 
             
             

@@ -170,7 +170,7 @@ $result = $mysqli->query($sql) or die($mysqli->error);
         END;
         
         mail( $to, $subject, $body, $headers );
-        header("location: /Bierverkoopmanagement/Bestelpagina(zak).php?email=$email");
+        header("location: /Bestelpagina(zak).php?email=$email");
 
         $to = "t88577457@gmail.com";
         $subject = "Bierbrouwerij DE BOER";
