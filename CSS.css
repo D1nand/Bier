@@ -246,6 +246,18 @@ box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
 .klanttekst{
   font-size: xx-large;
 }
+.tekstpart{
+  color: white;
+  font-size: large;
+  float: left;
+  margin-top: 600px;
+  margin-left: 30px;
+}
+.tekstpart2{
+  color: white;
+  font-size: large;
+  margin-left: 50px;
+}
 .Orders{
   margin-left: 300px;
   margin-top: 100px;
