@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
 		echo "<script>alert('Woops! Email of wachtwoord is fout.')</script>";
 	}
 }
-if($row["usertype"]=="admin")
+if($row["Usertype"]=="admin")
 
     header("location: orderoverzicht.php")
 
@@ -56,7 +56,6 @@ if($row["usertype"]=="admin")
 			<div class="input-group">
 				<button name="submit" class="btn">Login</button>
 			</div>
-			
 		</form>
 	</div>
 </body>
