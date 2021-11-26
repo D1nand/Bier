@@ -38,21 +38,22 @@
     <script>
         function openSideMenu(){
             document.getElementById('side-menu').style.width = '250px';
-            document.getElementById('mainnn').style.marginLeft = '250px';
+            document.getElementById('mainn').style.marginLeft = '250px';
         }
         function closeSideMenu(){
             document.getElementById('side-menu').style.width = '0';
-            document.getElementById('mainnn').style.marginLeft = '0';
+            document.getElementById('mainn').style.marginLeft = '0';
         }
     </script>
     
   
-    <a href="accounttoevoegen.php" class="toevoegknop">Account Toevoegen</a>
-    
-    <h1 class="klanttekst">Klantenoverzicht</h1>
+    <a href="accounttoevoegen.php" class="loginknop">Account Toevoegen</a><br><br><br><br>
+    <center>
+    <h1>Klantenoverzicht</h1>
+   
 
     </body>
-</div>
+
 </html>
 
 
@@ -67,8 +68,8 @@ $conn = mysqli_connect($host, $user, $password, $name);
 if ($conn->connect_error){
     die ("connection failed: " . $conn->connect_error);
 }
- $sql = "SELECT `id`, `Bedrijfsnaam`, `E-mail`, `Adres`, `Postcode`, `Factuuradres` FROM users ORDER BY id";
- $result = mysqli_query($conn, "select * from users");
+ $sql = "SELECT `id`, `Bedrijfsnaam`, `E-mail`, `Adres`, `Postcode`, `Factuuradres` FROM users WHERE Usertype='user' ORDER BY id";
+ $result = mysqli_query($conn, "select * from users WHERE Usertype='user'");
  
 ?>
 <?php

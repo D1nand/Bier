@@ -1,3 +1,39 @@
+<!DOCTYPE html>
+<nav class="nav">
+            <span class="spanned">
+                 <a href="#" onclick="openSideMenu()">
+                     <svg width="30" height="30">
+                            <path d="M0,5 30,5" stroke="#000" stroke-width="5"/>
+                                <path d="M0,14 30,14" stroke="#000" stroke-width="5"/>
+                                  <path d="M0,23 30,23" stroke="#000" stroke-width="5"/>
+                     </svg>
+                 </a>
+            </span>
+            <ul class="nav2">
+            </ul>
+        </nav>
+        
+        <div id="side-menu" class="sidenavi">
+            <a href="#" class="knop-sluit" onclick="closeSideMenu()">&times;</a>
+            <a href="Bestelpagina.html" onclick="return confirm('Weet u zeker dat u wilt uitloggen?')">Uitloggen</a>
+            <p class="tekstpart">Deboer@gmail.com</p>
+            <p class="tekstpart2">0616253486</p>
+        </div>
+        
+        <div id="mainn">
+        </div>
+        
+        <script>
+            function openSideMenu(){
+                document.getElementById('side-menu').style.width = '250px';
+                document.getElementById('mainn').style.marginLeft = '250px';
+            }
+            function closeSideMenu(){
+                document.getElementById('side-menu').style.width = '0';
+                document.getElementById('mainn').style.marginLeft = '0';
+            }
+        </script>
+        </html>
 <?php
 
 if (isset($_POST['submit'])) {
@@ -67,7 +103,6 @@ header("location: bibliotheek/mail2.php?email=$email&aantal=$aantal&totaalprijs=
 
     </Head>
     <body>
-    <a href="Bestelpagina.html" onclick="return confirm('Weet u zeker dat u wilt uitloggen?')" class="loginknop">Log uit</a>
         <center> 
         <div class="bestelformulierP">
             <div class="knop">
