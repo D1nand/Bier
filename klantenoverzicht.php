@@ -30,7 +30,7 @@
         <a href="#" class="knop-sluit" onclick="closeSideMenu()">&times;</a>
         <a href="orderoverzicht.php">Orderoverzicht</a>
         <a href="klantenoverzicht.php">Klantenoverzicht</a>
-        <a href="loginn.php">Uitloggen</a>
+        <a href="index.php">Uitloggen</a>
     </div>
     
     <div id="mainn">
@@ -65,7 +65,7 @@ $conn = mysqli_connect($host, $user, $password, $name);
 if ($conn->connect_error){
     die ("connection failed: " . $conn->connect_error);
 }
- $sql = "SELECT Id, Bedrijfsnaam, Email, Adres, Postcode, Factuuradres FROM users ORDER BY Id";
+ $sql = "SELECT `id`, `Bedrijfsnaam`, `E-mail`, `Adres`, `Postcode`, `Factuuradres` FROM users ORDER BY id";
  $result = mysqli_query($conn, "select * from users");
  
 ?>
@@ -76,16 +76,16 @@ if ($result -> num_rows > 0) {
       echo "<tr>"?>
       <tr>
 <td contenteditable="true" onkeydown="return (event.keyCode!=13);" data-old_value="
-      <?php echo $row["Bedrijfsnaam"];?>" onBlur="saveInlineEdit(this,'Bedrijfsnaam','<?php echo $row["Id"]; ?>')"  onClick="highlightEdit(this);"><?php echo $row["Bedrijfsnaam"]; ?></td>
+      <?php echo $row["Bedrijfsnaam"];?>" onBlur="saveInlineEdit(this,'Bedrijfsnaam','<?php echo $row["id"]; ?>')"  onClick="highlightEdit(this);"><?php echo $row["Bedrijfsnaam"]; ?></td>
       <td contenteditable="true" onkeydown="return (event.keyCode!=13);" data-old_value="
-      <?php echo $row["Email"];?>" onBlur="saveInlineEdit(this,'Email','<?php echo $row["Id"]; ?>')"  onClick="highlightEdit(this);"><?php echo $row["Email"]; ?></td>
+      <?php echo $row["E-mail"];?>" onBlur="saveInlineEdit(this,'E-mail','<?php echo $row["id"]; ?>')"  onClick="highlightEdit(this);"><?php echo $row["E-mail"]; ?></td>
       <td contenteditable="true" onkeydown="return (event.keyCode!=13);" data-old_value="
-      <?php echo $row["Adres"];?>" onBlur="saveInlineEdit(this,'Adres','<?php echo $row["Id"]; ?>')"  onClick="highlightEdit(this);"><?php echo $row["Adres"]; ?></td>
+      <?php echo $row["Adres"];?>" onBlur="saveInlineEdit(this,'Adres','<?php echo $row["id"]; ?>')"  onClick="highlightEdit(this);"><?php echo $row["Adres"]; ?></td>
       <td contenteditable="true" onkeydown="return (event.keyCode!=13);" data-old_value="
-      <?php echo $row["Postcode"];?>" onBlur="saveInlineEdit(this,'Postcode','<?php echo $row["Id"]; ?>')"  onClick="highlightEdit(this);"><?php echo $row["Postcode"]; ?></td>
+      <?php echo $row["Postcode"];?>" onBlur="saveInlineEdit(this,'Postcode','<?php echo $row["id"]; ?>')"  onClick="highlightEdit(this);"><?php echo $row["Postcode"]; ?></td>
       <td contenteditable="true" onkeydown="return (event.keyCode!=13);" data-old_value="
-      <?php echo $row["Factuuradres"];?>" onBlur="saveInlineEdit(this,'Factuuradres','<?php echo $row["Id"]; ?>')"  onClick="highlightEdit(this);"><?php echo $row["Factuuradres"]; ?></td>
-      <?php echo "<td><a href='klantenoverzicht.php?deletePost=".$row['Id']."'<span class='Verwijderen'></span>Verwijderen</a></td>";
+      <?php echo $row["Factuuradres"];?>" onBlur="saveInlineEdit(this,'Factuuradres','<?php echo $row["id"]; ?>')"  onClick="highlightEdit(this);"><?php echo $row["Factuuradres"]; ?></td>
+      <?php echo "<td><a href='klantenoverzicht.php?deletePost=".$row['id']."'<span class='Verwijderen'></span>Verwijderen</a></td>";
     }
     echo '</table>';
 }

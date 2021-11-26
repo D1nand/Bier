@@ -15,8 +15,8 @@ $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
 if ($conn->connect_error){
     die ("connection failed: " . $conn->connect_error);
 }
-$sql = "INSERT INTO users (Bedrijfsnaam, Email, Adres, Postcode, Factuuradres, Wachtwoord) 
-VALUES ('$Bedrijfsnaam', '$Email', '$Adres', '$Postcode', '$Factuuradres', '$Wachtwoord');";
+$sql = "INSERT INTO users (`Bedrijfsnaam`, `E-mail`, `Adres`, `Postcode`, `Factuuradres`, `Usertype`, `Wachtwoord`) 
+VALUES ('$Bedrijfsnaam', '$Email', '$Adres', '$Postcode', '$Factuuradres', 'user', '$Wachtwoord');";
 mysqli_query($conn, $sql);
 
 header("Location: klantenoverzicht.php?Accounttoegevoegd");

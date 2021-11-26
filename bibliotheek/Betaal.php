@@ -66,7 +66,7 @@ if ( $mysqli->connect_error ) {
             Content-Type: text/plain
             
             Er is een bestelling geplaatst door $naam
-            http://localhost/Bierverkoopmanagement/orderoverzicht.php
+            https://p21t2.lesonline.nu/orderoverzicht.php
 
             END;
 

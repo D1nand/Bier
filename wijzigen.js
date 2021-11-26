@@ -2,7 +2,7 @@ function highlightEdit(editableObj) {
     $(editableObj).css("background","#FFF");
 } 
 
-function saveInlineEdit(editableObj,column,Id) {
+function saveInlineEdit(editableObj,column,id) {
     // no change change made then return false
     if($(editableObj).attr('data-old_value') === editableObj.innerHTML)
     return false;
@@ -11,7 +11,7 @@ function saveInlineEdit(editableObj,column,Id) {
     $.ajax({
         url: "saveInlineEdit.php",
         cache: false,
-        data:'column='+column+'&value='+editableObj.innerHTML+'&id='+Id,
+        data:'column='+column+'&value='+editableObj.innerHTML+'&id='+id,
         success: function(response)  {
             console.log(response);
             // set updated value as old value
