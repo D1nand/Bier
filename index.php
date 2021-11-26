@@ -56,6 +56,7 @@ if($row["Usertype"]=="admin")
 			<div class="input-group">
 				<button name="submit" class="btn">Login</button>
 			</div>
+			<p class="login-text">Ga <a class="particulieren-text" href="Bestelpagina.html">hier</a> verder zonder account .</p>
 		</form>
 	</div>
 </body>
