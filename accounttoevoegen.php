@@ -9,6 +9,7 @@
 
 <body>
 <a class="terugklantoverzicht" href="klantenoverzicht.php">Terug</a>
+
 <form action="MaakAccount.php" method="POST" class="accountformulier">
     
         <input class="f" type="text" name="Bedrijfsnaam" placeholder="Bedrijfsnaam" required>
@@ -25,4 +26,5 @@
         <br>
         <button class="mab" type="submit" name="submit">Maak account</button>
 </form>
+
     </body>
