@@ -39,10 +39,10 @@
     </html>
     <?php
 $dbServername = "localhost";
-$dbUsername = "root";
-$dbPassword = "";
-$dbName = "bier";
-
+$dbUsername = "deb85590_p21t2";
+$dbPassword = "pv9EptlJ";
+$dbName = "deb85590_p21t2";
+new mysqli("localhost","deb85590_p21t2","pv9EptlJ","deb85590_p21t2");
         // Create connection
     // Create connection
     $conn = mysqli_connect($servername, $username, $password, $dbname);

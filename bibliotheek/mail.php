@@ -3,7 +3,7 @@
 
 if (isset($_POST['submit'])) {
 
-    $mysqli = new mysqli("localhost","root","","bier");
+    $mysqli = new mysqli("localhost","deb85590_p21t2","pv9EptlJ","deb85590_p21t2");
 
     if ( $mysqli->connect_error ) {
         die( 'Connect Error: ' . $mysqli->connect_errno . ': ' . $mysqli->connect_error );

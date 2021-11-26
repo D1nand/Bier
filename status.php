@@ -1,7 +1,6 @@
 <?php
 
-// update query maken met id er in
-$mysqli = new mysqli("localhost","root","","bier");
+$mysqli = new mysqli("localhost","deb85590_p21t2","pv9EptlJ","deb85590_p21t2");
 
 if ($mysqli -> connect_errno) {
   echo "Failed to connect to MySQL: " . $mysqli -> connect_error;

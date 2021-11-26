@@ -60,9 +60,9 @@
 <?php
 session_start();
 $host = "localhost";
-$user = "root";
-$password = "";
-$name = "bier";
+$user = "deb85590_p21t2";
+$password = "pv9EptlJ";
+$name = "deb85590_p21t2";
 
 $conn = mysqli_connect($host, $user, $password, $name);
 if ($conn->connect_error){

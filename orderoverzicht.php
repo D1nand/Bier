@@ -49,9 +49,9 @@
 </html>
 <?php
 $dbServername = "localhost";
-$dbUsername = "root";
-$dbPassword = "";
-$dbName = "bier";
+$dbUsername = "deb85590_p21t2";
+$dbPassword = "pv9EptlJ";
+$dbName = "deb85590_p21t2";
 
 $mysqli = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
 if ($mysqli->connect_error){
@@ -77,10 +77,8 @@ if ($mysqli->connect_error){
         <td>". $row['E-mail'] . "</td>
         <td> " . $row['Datum'] . "</td>";
         if($row['Status'] == 0){
-            // niet afgehandeld. Toon deleteknop (linkje) en groen vinkje (linkje)
            echo "<td> <a class='afgerond' href='status.php?id=".$row['id']."'><i class='fas fa-check-circle'></i></a></td>";
         }else{
-            // toon grijs vinkje (geen link)
            echo "<td> <i class='far fa-check-circle'></i></td>";
         }
         }
