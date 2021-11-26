@@ -48,7 +48,9 @@
     
   
     <a href="accounttoevoegen.php" class="toevoegknop">Account Toevoegen</a>
-    <h2 class="klanttekst">Klantenoverzicht</h2>
+    
+    <h1 class="klanttekst">Klantenoverzicht</h1>
+
     </body>
 </div>
 </html>
