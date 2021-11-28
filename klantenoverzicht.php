@@ -74,7 +74,7 @@ if ($conn->connect_error){
 ?>
 <?php
 if ($result -> num_rows > 0) {
-    echo "<table class='klanttabel'><tr><th>Bedrijfsnaam</th><th>Email</th><th>Adres</th><th>Postcode</th><th>Factuuradres</th><th>Verwijderen</tr>";
+    echo "<table class='klanttabel'><tr><th>Bedrijfsnaam</th><th>E-mail</th><th>Adres</th><th>Postcode</th><th>Factuuradres</th><th>Verwijderen</tr>";
     while($row = mysqli_fetch_array($result)) {
       echo "<tr>"?>
       <tr>

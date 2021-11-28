@@ -5,7 +5,7 @@ $dbPassword = "pv9EptlJ";
 $dbName = "deb85590_p21t2";
 
 $Bedrijfsnaam = $_POST['Bedrijfsnaam'];
-$Email = $_POST['Email'];
+$Email = $_POST['E-mail'];
 $Adres = $_POST['Adres'];
 $Postcode = $_POST['Postcode'];
 $Factuuradres = $_POST['Factuuradres'];

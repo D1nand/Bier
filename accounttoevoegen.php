@@ -14,7 +14,7 @@
     
         <input class="f" type="text" name="Bedrijfsnaam" placeholder="Bedrijfsnaam" required>
         <br>
-        <input class="f" type="email" name="Email" placeholder="E-mail" required>
+        <input class="f" type="email" name="E-mail" placeholder="E-mail" required>
         <br>
         <input class="f" type="text" name="Adres" placeholder="Adres" required>
         <br>
