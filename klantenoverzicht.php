@@ -94,7 +94,7 @@ if ($result -> num_rows > 0) {
 }
 
 if(isset($_GET['deletePost'])) {
-    $stmt = $conn->prepare('DELETE FROM users WHERE Id = ?');
+    $stmt = $conn->prepare('DELETE FROM users WHERE id = ?');
     $stmt->bind_param('i', $_GET['deletePost']);
     $stmt->execute();
 }

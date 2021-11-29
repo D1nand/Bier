@@ -9,7 +9,7 @@ function saveInlineEdit(editableObj,column,id) {
     // send ajax to update value
     $(editableObj).css("background","#FFF url(loader.gif) no-repeat right");
     $.ajax({
-        url: "saveInlineEdit.php",
+        url: "saveinlineEdit.php",
         cache: false,
         data:'column='+column+'&value='+editableObj.innerHTML+'&id='+id,
         success: function(response)  {
