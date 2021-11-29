@@ -2,7 +2,7 @@ function highlightEdit(editableObj) {
     $(editableObj).css("background","#FFF");
 } 
 
-function saveInlineEdit(editableObj,column,id) {
+function saveinlineEdit(editableObj,column,id) {
     // no change change made then return false
     if($(editableObj).attr('data-old_value') === editableObj.innerHTML)
     return false;
